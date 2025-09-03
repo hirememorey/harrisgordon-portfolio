@@ -29,15 +29,14 @@ const {
 			)}
 		</header>
 
-		<div class="mt-4">
-			<button type="button" class="toggle-btn inline-flex items-center rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm text-slate-900 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300" aria-expanded="false">
-				[+] Show the Playbook
-			</button>
-		</div>
+		<!-- Disclosure View (native details/summary) -->
+		<details class="mt-6 group cs-disclosure">
+			<summary class="w-full cursor-pointer inline-flex items-center rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm text-slate-900 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 select-none">
+				<span class="group-open:inline hidden">[-] Hide the Playbook</span>
+				<span class="group-open:hidden inline">[+] Show the Playbook</span>
+			</summary>
 
-		<!-- Details View -->
-		<section class="details mt-6 hidden" aria-hidden="true">
-			<div class="space-y-6 text-neutral-800">
+			<div class="mt-6 space-y-6 text-neutral-800">
 				<div>
 					<h4 class="text-base md:text-lg font-medium">The Situation</h4>
 					<p class="mt-2">{situation}</p>
@@ -59,46 +58,15 @@ const {
 					)}
 				</div>
 			</div>
-		</section>
+		</details>
 	</div>
 </article>
 
-<script>
-  // Client-side toggle for showing/hiding the playbook details
-  // Uses progressive enhancement: content is visible only when JS toggles it
-  (function () {
-    const root = document.currentScript?.closest('article');
-    if (!root) return;
-    const btn = root.querySelector('.toggle-btn');
-    const details = root.querySelector('.details');
-    if (!(btn instanceof HTMLButtonElement) || !(details instanceof HTMLElement)) return;
-
-    const toggleBtn = btn;
-    const detailsEl = details;
-
-    function show() {
-      detailsEl.classList.remove('hidden');
-      detailsEl.setAttribute('aria-hidden', 'false');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.textContent = '[-] Hide the Playbook';
-    }
-
-    function hide() {
-      detailsEl.classList.add('hidden');
-      detailsEl.setAttribute('aria-hidden', 'true');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.textContent = '[+] Show the Playbook';
-    }
-
-    // Initialize hidden
-    hide();
-
-    toggleBtn.addEventListener('click', () => {
-      const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-      if (expanded) hide();
-      else show();
-    });
-  })();
-</script>
+<style>
+	/* Hide default marker only within this component */
+	.cs-disclosure summary::-webkit-details-marker {
+		display: none;
+	}
+</style>
 
 

@@ -24,16 +24,16 @@ All work happens in `src/pages/index.astro`. Keep sections semantic and minimal.
   - Content: `mt-4 space-y-3 text-neutral-800`
 
 #### 3) Proof (Case Studies)
-- Purpose: Three expandable case studies.
+- Purpose: Three expandable case studies using native `<details>/<summary>`.
 - Structure:
   - `section#proof`
-  - For each case: a disclosure/accordion pattern
-  - Button title line (company, role, outcome) + expandable content
+  - For each case: a `<details>` wrapper with a styled `<summary>` acting as the toggle label
+  - Panel contains Situation, Intervention (ordered), Playbook (ordered)
 - Suggested Tailwind:
   - Group wrapper: `divide-y divide-neutral-200 rounded-lg border border-neutral-200`
-  - Item summary button: `w-full text-left px-4 py-3 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300`
-  - Panel: `px-4 pb-4 text-neutral-800`
-  - Consider progressive enhancement using `<details>`/`<summary>` for simplicity
+  - Summary (toggle): `w-full inline-flex items-center rounded-md border border-neutral-300 px-3 py-1.5 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300`
+  - Use `group`/`group-open` to swap label text when open
+  - Panel: `mt-6 space-y-6 text-neutral-800`
 
 #### 4) Core Competencies & Footer
 - Purpose: Enumerate strengths; close with contact.
@@ -45,8 +45,8 @@ All work happens in `src/pages/index.astro`. Keep sections semantic and minimal.
   - Grid: `mt-6 grid grid-cols-1 md:grid-cols-2 gap-4`
   - Footer: `mt-16 border-t border-neutral-200 pt-6 text-sm text-neutral-700`
 
-#### Content placeholders to insert now
-- Replace `Welcome` in `index.astro` with sections scaffold and minimal placeholder copy.
+#### Content status
+- Case studies populated in `src/pages/index.astro` with full `oneLiner`, `keyResults`, `situation`, `intervention`, and `playbook` content.
 
 Example skeleton to paste into `src/pages/index.astro` (adjust copy later):
 

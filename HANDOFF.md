@@ -12,13 +12,13 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 
 ### Current state
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
-- Homepage assembled with `Hero`, `OperatingSystem`, and three `CaseStudy` placeholders.
-- `CaseStudy` is reusable with a summary and a toggleable details view (no external JS frameworks). Toggle button updates ARIA.
+- Homepage assembled with `Hero`, `OperatingSystem`, and three populated `CaseStudy` entries.
+- `CaseStudy` now uses native `<details>/<summary>` for disclosure (no JS). Labels swap via CSS using group-open.
 
 ### What’s left (high-signal)
-1) Fill in the three case studies (Situation, Intervention steps, Playbook steps, and final key results as needed).
+1) Typography and spacing polish (see ROADMAP.md). Ensure consistent vertical rhythm across sections and responsive heading scales.
 2) Apply the Tailwind refinements listed in ROADMAP.md (spacing, typography, responsive tweaks).
-3) Add basic SEO/OG tags in `Layout.astro` (description exists; add Open Graph/Twitter if desired).
+3) Add basic SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
 4) Decide on deployment target (Vercel/Netlify/Cloudflare) and set up a CI deploy.
 
 ### How to run

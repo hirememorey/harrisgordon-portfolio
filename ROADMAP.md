@@ -1,13 +1,14 @@
 ## Roadmap (Prioritized)
 
 ### P0 — Content & polish
-- [ ] Populate all `CaseStudy` props in `index.astro` (Situation, Intervention, Playbook, Key Results)
+- [x] Populate all `CaseStudy` props in `index.astro` (Situation, Intervention, Playbook, Key Results)
 - [ ] Refine spacing rhythm across sections: use `py-16 md:py-20 lg:py-24` consistently
 - [ ] Typography hierarchy pass per file:
   - Hero: `h1 leading-tight`, `h2 text-2xl md:text-3xl`, paragraph `text-lg md:text-xl`
   - Operating System: `h2 text-3xl md:text-4xl`, paragraph `text-lg md:text-xl`
   - CaseStudy: titles `text-xl md:text-2xl`, lists `leading-relaxed`
-- [ ] Improve button sizing responsiveness (Hero CTA, CaseStudy toggle)
+- [ ] Improve summary/button sizing responsiveness (Hero CTA, CaseStudy summary toggle)
+- [x] Convert `CaseStudy` toggle to native `<details>/<summary>` (no JS)
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)
@@ -28,6 +29,6 @@
 ### Style changes to implement (diff summary)
 - Operating System section: add `scroll-mt-24`; increase vertical padding
 - Proof section heading: `text-3xl md:text-4xl font-semibold leading-tight`
-- CaseStudy card: add `shadow-sm`; lists `leading-relaxed`; responsive button sizing
+- CaseStudy card: add `shadow-sm`; lists `leading-relaxed`; responsive summary sizing
 
 
