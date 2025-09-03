@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-white text-neutral-900;
+  }
+
+  a {
+    @apply text-neutral-900 underline underline-offset-2 decoration-neutral-300 hover:decoration-neutral-500;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    @apply px-5 sm:px-6 md:px-8;
+  }
+  .prose-base {
+    @apply leading-relaxed text-balance;
+  }
+}
