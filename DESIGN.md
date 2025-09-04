@@ -52,3 +52,19 @@ If an accent is needed later, choose one muted color and use very sparingly.
 - Avoid heavy images; prefer text-first content.
 
 
+
+#### Snapshot label
+- In the hero snapshot sentence, prepend a short inline label: `Case studies:`.
+- Keep it in the same paragraph as the three links. Do not introduce a new line or badge.
+- Style: body size, neutral-700, small right margin.
+
+#### Hero ↔ Operating System spacing
+- Hero section uses slightly reduced bottom padding; Operating System uses slightly reduced top padding to tighten the gap while preserving the fold on 1280×800 and 1440×900.
+- Verify the fold after any copy changes; prefer adjusting only these paddings rather than global rhythm.
+
+#### Copy & punctuation
+- Avoid em/en dashes in visible site copy. Prefer short, clear sentences and minimal commas.
+- Examples:
+  - Use `0-1`, not `0–1`.
+  - Use `go to market`, not `Go-to-Market`.
+  - Replace long em-dash clauses with short sentences or simple prepositions.

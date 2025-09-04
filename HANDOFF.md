@@ -18,6 +18,11 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - `OperatingSystem` is intentionally one step denser so the full block appears in the first view on common laptop sizes.
 - `CaseStudy` is a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit (“Read full story/Hide full story”). Optional metadata badges render if provided.
 
+### Recent decisions
+- The hero snapshot sentence begins with a small inline label: `Case studies:`. It remains in the same paragraph as the three links to preserve the fold.
+- Spacing between Hero and Operating System is slightly tightened via Hero bottom padding and Operating System top padding. Check fold at 1280×800 and 1440×900 after copy changes.
+- Visible copy avoids em/en dashes and heavy punctuation. Prefer short sentences and simple phrasing. The meta description also avoids em dashes.
+
 ### What’s left (high-signal)
 1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
 2) Decide on deployment target (Vercel/Netlify/Cloudflare) and set up a CI deploy; add preview deploys.

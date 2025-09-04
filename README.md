@@ -1,4 +1,4 @@
-## Harris Gordon — Portfolio (Astro + Tailwind)
+## Harris Gordon | Portfolio (Astro + Tailwind)
 
 Minimal, fast, and accessible portfolio site built with Astro v5 and Tailwind CSS v4.
 
@@ -19,7 +19,7 @@ Local dev runs at `http://localhost:4321`.
 
 ### What’s implemented
 - Section order: Hero → Operating System → Proof (Case Studies)
-- Hero includes a one‑sentence results snapshot with links to each case study
+- Hero includes a one‑sentence results snapshot with links to each case study. The snapshot is prefixed inline with `Case studies:`
 - Primary CTA “View My Playbooks” jumps to `#proof`; Email/LinkedIn shown inline
 - Operating System section appears fully in the first view (fold) on common laptop sizes
 - Three populated Case Studies
