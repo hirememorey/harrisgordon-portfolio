@@ -26,10 +26,10 @@ If an accent is needed later, choose one muted color and use very sparingly.
 - Intra-section spacing: `space-y-4 md:space-y-6`
 
 #### Components (utility-first)
-- Section wrapper: `w-full py-12 md:py-16 lg:py-20`
+- Section wrapper: `w-full py-16 md:py-20 lg:py-24`
 - Section header group: `space-y-2`
-- Card/surface (if needed): `rounded-lg border border-neutral-200 p-6 md:p-8 bg-white/80`
-- Disclosure/accordion buttons: focus-visible outlines, `data-[state=open]:...` where applicable
+- Card/surface (if needed): `rounded-lg border border-neutral-200 p-6 md:p-8 bg-white/80 shadow-sm`
+- Disclosure/accordion buttons: focus-visible outlines; use native `<details>/<summary>` with `group-open` for toggled text
 
 #### Accessibility
 - Maintain sufficient color contrast (WCAG AA+).

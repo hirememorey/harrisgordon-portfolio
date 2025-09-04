@@ -13,7 +13,7 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 ### Current state
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
 - Homepage assembled with `Hero`, `OperatingSystem`, and three populated `CaseStudy` entries.
-- `CaseStudy` now uses native `<details>/<summary>` for disclosure (no JS). Labels swap via CSS using group-open.
+- `CaseStudy` is now a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Labels swap via CSS using group-open.
 
 ### What’s left (high-signal)
 1) Typography and spacing polish (see ROADMAP.md). Ensure consistent vertical rhythm across sections and responsive heading scales.
@@ -37,7 +37,7 @@ Open the printed local URL.
 - Props: `title: string`, `oneLiner: string`, `keyResults: string[]`, `situation: string`, `intervention: string[]`, `playbook: string[]`
 
 ### Known considerations
-- Keep JS minimal. `CaseStudy` uses small inline script for toggle.
+- Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.
 - Maintain semantic HTML and accessible focus/ring states.
 
 If you need more detail or open questions, see ROADMAP.md and CASE_STUDIES_TODO.md.

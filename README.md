@@ -15,11 +15,11 @@ Local dev runs at `http://localhost:4321`.
 - `src/layouts/Layout.astro` — layout shell, meta, Inter font
 - `src/styles/global.css` — Tailwind v4 entry and small utilities
 - `src/pages/index.astro` — single-page composition
-- `src/components/CaseStudy.astro` — disclosure component using native `<details>/<summary>`
+- `src/components/CaseStudy.astro` — bifurcated case study card: Key Results + Playbook always visible; narrative via native `<details>/<summary>` (no JS)
 
 ### What’s implemented
 - Hero, Operating System, and three populated Case Studies
-- Native disclosure for playbooks (no client JS)
+- Native details/summary for the narrative; Results and Playbook are always visible (no client JS)
 
 ### Next steps
 - Typography/spacing polish (see `ROADMAP.md`)

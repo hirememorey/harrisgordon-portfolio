@@ -1,6 +1,8 @@
-## Case Studies — Content TODO
+## Case Studies — Content (Archived TODO)
 
-Populate the following props for each `CaseStudy` instance in `src/pages/index.astro`.
+Status: Complete. All case study content is populated in `src/pages/index.astro` and rendered via `src/components/CaseStudy.astro`.
+
+This document is kept as a reference for the data shape only. Make content edits directly in `index.astro` to avoid duplication/drift.
 
 ### Data shape
 - `title: string`
@@ -10,46 +12,9 @@ Populate the following props for each `CaseStudy` instance in `src/pages/index.a
 - `intervention: string[]` (ordered steps)
 - `playbook: string[]` (ordered, repeatable steps)
 
-### Case Study 1 — The Crisis Manager
-- keyResults:
-  - Retained a $900k ARR strategic account that was on the brink of churning.
-  - Created the V1 of a new Enterprise Release Protocol, a playbook now used to de-risk other high-stakes accounts.
-  - Transformed the account from a churn risk into our most important design partner for stability.
-- situation: <add a concise paragraph>
-- intervention:
-  - <step 1>
-  - <step 2>
-  - <step 3>
-- playbook:
-  - <repeatable step 1>
-  - <repeatable step 2>
-  - <repeatable step 3>
-
-### Case Study 2 — The Turnaround Operator
-- keyResults:
-  - <add 2–4 measurable results>
-- situation: <add a concise paragraph>
-- intervention:
-  - <step 1>
-  - <step 2>
-  - <step 3>
-- playbook:
-  - <repeatable step 1>
-  - <repeatable step 2>
-  - <repeatable step 3>
-
-### Case Study 3 — The Venture Builder
-- keyResults:
-  - <add 2–4 measurable results>
-- situation: <add a concise paragraph>
-- intervention:
-  - <step 1>
-  - <step 2>
-  - <step 3>
-- playbook:
-  - <repeatable step 1>
-  - <repeatable step 2>
-  - <repeatable step 3>
+### Where to edit
+- Content: `src/pages/index.astro` (props on each `CaseStudy` instance)
+- Structure & styles: `src/components/CaseStudy.astro`
 
 ### Example usage (in `index.astro`)
 ```astro

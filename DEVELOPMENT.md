@@ -60,6 +60,6 @@ npx astro telemetry disable
   - Then rerun the requested command.
 
 #### What to edit next
-Work in `src/pages/index.astro`. The base layout and global styles are ready; follow `NEXT_STEPS.md` for the section structure. Case studies are implemented using native `<details>/<summary>`—prefer this no-JS pattern unless richer behavior is required.
+Work in `src/pages/index.astro`. The base layout and global styles are ready; follow `NEXT_STEPS.md` for the section structure. Case studies now use a bifurcated layout: always-visible Results + Playbook with the narrative (Situation + Intervention) behind a native `<details>/<summary>`—prefer this no-JS pattern unless richer behavior is required.
 
 

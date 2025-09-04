@@ -24,15 +24,16 @@ All work happens in `src/pages/index.astro`. Keep sections semantic and minimal.
   - Content: `mt-4 space-y-3 text-neutral-800`
 
 #### 3) Proof (Case Studies)
-- Purpose: Three expandable case studies using native `<details>/<summary>`.
+- Purpose: Three case studies where Key Results and the Repeatable Playbook are always visible; the narrative (Situation + Intervention) is opt-in via native `<details>/<summary>`.
 - Structure:
   - `section#proof`
   - For each case: a `<details>` wrapper with a styled `<summary>` acting as the toggle label
   - Panel contains Situation, Intervention (ordered), Playbook (ordered)
 - Suggested Tailwind:
-  - Group wrapper: `divide-y divide-neutral-200 rounded-lg border border-neutral-200`
-  - Summary (toggle): `w-full inline-flex items-center rounded-md border border-neutral-300 px-3 py-1.5 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300`
-  - Use `group`/`group-open` to swap label text when open
+  - Card: `rounded-lg border border-neutral-200 bg-white/80 shadow-sm`
+  - Key Results list: `leading-relaxed`
+  - Playbook list: `leading-relaxed rounded-md border border-neutral-200 bg-neutral-50 p-3 md:p-4`
+  - Summary (toggle): `w-full inline-flex items-center rounded-md border border-neutral-300 px-3 py-1.5 md:text-base hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300`; Use `group`/`group-open` to swap label text
   - Panel: `mt-6 space-y-6 text-neutral-800`
 
 #### 4) Core Competencies & Footer

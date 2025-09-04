@@ -2,12 +2,13 @@
 
 ### P0 — Content & polish
 - [x] Populate all `CaseStudy` props in `index.astro` (Situation, Intervention, Playbook, Key Results)
-- [ ] Refine spacing rhythm across sections: use `py-16 md:py-20 lg:py-24` consistently
-- [ ] Typography hierarchy pass per file:
+- [x] Refactor `CaseStudy` to bifurcated layout (Results + Playbook visible; narrative behind toggle)
+- [x] Refine spacing rhythm across sections: use `py-16 md:py-20 lg:py-24` consistently
+- [x] Typography hierarchy pass per file:
   - Hero: `h1 leading-tight`, `h2 text-2xl md:text-3xl`, paragraph `text-lg md:text-xl`
   - Operating System: `h2 text-3xl md:text-4xl`, paragraph `text-lg md:text-xl`
   - CaseStudy: titles `text-xl md:text-2xl`, lists `leading-relaxed`
-- [ ] Improve summary/button sizing responsiveness (Hero CTA, CaseStudy summary toggle)
+- [x] Improve summary/button sizing responsiveness (Hero CTA, CaseStudy summary toggle)
 - [x] Convert `CaseStudy` toggle to native `<details>/<summary>` (no JS)
 
 ### P1 — SEO & metadata
@@ -26,9 +27,9 @@
 - [ ] Add footer section (simple, low-chrome). If 3 columns:
   - Wrapper: `grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8`
 
-### Style changes to implement (diff summary)
-- Operating System section: add `scroll-mt-24`; increase vertical padding
+### Style changes implemented
+- Operating System section: added `scroll-mt-24`; increased vertical padding
 - Proof section heading: `text-3xl md:text-4xl font-semibold leading-tight`
-- CaseStudy card: add `shadow-sm`; lists `leading-relaxed`; responsive summary sizing
+- CaseStudy card: added `shadow-sm`; lists `leading-relaxed`; responsive summary sizing; Playbook emphasized
 
 
