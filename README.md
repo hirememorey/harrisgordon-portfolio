@@ -18,7 +18,11 @@ Local dev runs at `http://localhost:4321`.
 - `src/components/CaseStudy.astro` — bifurcated case study card: Key Results + Playbook always visible; narrative via native `<details>/<summary>` (no JS); explicit disclosure labels; optional metadata badges
 
 ### What’s implemented
-- Hero, Operating System, and three populated Case Studies
+- Section order: Hero → Operating System → Proof (Case Studies)
+- Hero includes a one‑sentence results snapshot with links to each case study
+- Primary CTA “View My Playbooks” jumps to `#proof`; Email/LinkedIn shown inline
+- Operating System section appears fully in the first view (fold) on common laptop sizes
+- Three populated Case Studies
 - Global vertical rhythm (`section-y`) and reading measure applied to improve scan/read
 - CaseStudy lists normalized for scannability; explicit disclosure labels; optional Role/Timeframe/Domain badges
 - Native details/summary for the narrative; Results and Playbook are always visible (no client JS)
@@ -28,6 +32,11 @@ Local dev runs at `http://localhost:4321`.
 - SEO/OG/Twitter meta + canonical URL in `Layout.astro`; consider `theme-color`
 - Choose deployment target (Vercel/Netlify/Cloudflare) and enable preview deploys
 - Optional: lightweight analytics (Plausible/Umami)
+
+### First‑view (fold) acceptance criteria
+- Viewport targets: 1280×800 and 1440×900
+- Without scrolling you should see: name, thesis, CTA + Email/LinkedIn, the one‑sentence snapshot, and the full Operating System block
+- Snapshot clauses link to specific case studies (`#cs-crisis`, `#cs-turnaround`, `#cs-venture`)
 
 ### Scripts
 - `npm run dev` — start dev server

@@ -27,7 +27,7 @@ npm run preview
 - `astro.config.mjs`: Astro config. Tailwind v4 is integrated via `@tailwindcss/vite`.
 - `src/styles/global.css`: Imports Tailwind and defines minimal base styles and small utilities (`section-y`, `measure`).
 - `src/layouts/Layout.astro`: Imports the global stylesheet and provides a clean, centered content shell with a reading measure.
-- `src/pages/index.astro`: The single page. Add the four sections here.
+- `src/pages/index.astro`: The single page. Section order is Hero → Operating System → Proof.
 
 #### Styling
 - Tailwind v4 style entry: `@import "tailwindcss";` in `src/styles/global.css`.
@@ -60,6 +60,15 @@ npx astro telemetry disable
   - Then rerun the requested command.
 
 #### What to edit next
-Work in `src/pages/index.astro`. The base layout and global styles are ready; use the global `section-y` rhythm and reading `measure`. Case studies use a bifurcated layout: always-visible Results + Playbook with the narrative (Situation + Intervention) behind a native `<details>/<summary>`—with explicit “Read full story/Hide full story” labels. Prefer this no-JS pattern unless richer behavior is required. Optional metadata badges render if provided.
+Work in `src/pages/index.astro`. The base layout and global styles are ready; use the global `section-y` rhythm and reading `measure`. Case studies use a bifurcated layout: always-visible Results + Playbook with the narrative (Situation + Intervention) behind a native `<details>/<summary>`—with explicit “Read full story/Hide full story” labels. Optional metadata badges render if provided.
+
+Hero guidance:
+- One-sentence thesis in first person.
+- One-sentence results snapshot with 2–3 clauses. Each clause links to a case study anchor (`#cs-crisis`, `#cs-turnaround`, `#cs-venture`).
+- CTA `View My Playbooks` links to `#proof`; Email and LinkedIn inline.
+
+Fold validation:
+- Targets: 1280×800 and 1440×900.
+- Without scrolling: name, thesis, CTA + Email/LinkedIn, snapshot, and full Operating System block are visible.
 
 

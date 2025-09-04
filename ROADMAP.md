@@ -4,10 +4,12 @@
 - [x] Populate all `CaseStudy` props in `index.astro` (Situation, Intervention, Playbook, Key Results)
 - [x] Refactor `CaseStudy` to bifurcated layout (Results + Playbook visible; narrative behind toggle)
 - [x] Establish global rhythm/utilities: `section-y` and `measure` (~72ch)
-- [x] Apply rhythm to `Hero`, `OperatingSystem`, and `#proof` sections
+- [x] Apply rhythm to `Hero`, `OperatingSystem`, and `#proof` sections (Hero/OS may be one step denser)
 - [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
 - [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
 - [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
+- [x] Reorder sections to Hero → Operating System → Proof
+- [x] Add snapshot in Hero with links to case studies
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)

@@ -9,9 +9,10 @@ import CaseStudy from '../components/CaseStudy.astro';
 	<Hero />
 	<OperatingSystem />
 
-	<section id="proof" class="w-full section-y">
+	<section id="proof" class="w-full section-y scroll-mt-24">
 		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">The Proof: Case Studies</h2>
 		<div class="mt-6 space-y-6">
+			<div id="cs-crisis" class="scroll-mt-24">
 			<CaseStudy
 				title="The Crisis Manager"
 				oneLiner="Retaining a $900k enterprise account by transforming a P0 crisis into a new company protocol."
@@ -32,7 +33,9 @@ import CaseStudy from '../components/CaseStudy.astro';
 					'Co-design the System: Partner with the customer to create a durable fix.'
 				]}
 			/>
+			</div>
 
+			<div id="cs-turnaround" class="scroll-mt-24">
 			<CaseStudy
 				title="The Turnaround Operator"
 				oneLiner="Unlocking a $2.2M enterprise pipeline by sunsetting a high-drain SMB segment."
@@ -53,7 +56,9 @@ import CaseStudy from '../components/CaseStudy.astro';
 					'Build a coalition to turn the strategy into culture.'
 				]}
 			/>
+			</div>
 
+			<div id="cs-venture" class="scroll-mt-24">
 			<CaseStudy
 				title="The Venture Builder"
 				oneLiner="From zero to a signed enterprise pilot in 11 weeks."
@@ -74,6 +79,8 @@ import CaseStudy from '../components/CaseStudy.astro';
 					"Build the minimum viable assets to get to a pilot."
 				]}
 			/>
+			</div>
 		</div>
 	</section>
+
 </Layout>

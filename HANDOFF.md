@@ -11,15 +11,18 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - Components: `Hero.astro`, `OperatingSystem.astro`, `CaseStudy.astro`
 
 ### Current state
+- Section order is Hero → Operating System → Proof.
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
 - Reading measure applied to main container; global vertical rhythm utility (`section-y`) and base prose leading in place.
-- Homepage assembled with `Hero`, `OperatingSystem`, and three populated `CaseStudy` entries.
+- `Hero` includes a one‑sentence results snapshot with links to each case study; CTA jumps to `#proof`.
+- `OperatingSystem` is intentionally one step denser so the full block appears in the first view on common laptop sizes.
 - `CaseStudy` is a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit (“Read full story/Hide full story”). Optional metadata badges render if provided.
 
 ### What’s left (high-signal)
 1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
 2) Decide on deployment target (Vercel/Netlify/Cloudflare) and set up a CI deploy; add preview deploys.
 3) Optional: lightweight analytics (Plausible/Umami).
+4) Create an OG image.
 
 ### How to run
 ```bash
@@ -40,6 +43,10 @@ Open the printed local URL.
 - Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.
 - Maintain semantic HTML and accessible focus/ring states.
 - Alignment system: single axis for body copy (left-aligned). Exceptions: hero headline can be centered; Operating System heading is centered on small screens only and left-aligned from `md` up. All multi-line text remains left-aligned at all sizes.
+
+### Fold acceptance criteria
+- Targets: 1280×800 and 1440×900
+- Without scrolling: name, thesis, CTA + Email/LinkedIn, one‑sentence snapshot, and the full Operating System block are visible.
 
 If you need more detail or open questions, see ROADMAP.md and CASE_STUDIES_TODO.md.
 

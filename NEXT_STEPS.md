@@ -120,6 +120,11 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 ```
 
+#### Fold validation checklist
+- Viewports: 1280×800 and 1440×900
+- Above the fold: name, thesis, primary CTA + Email/LinkedIn, one‑sentence results snapshot, and full Operating System block
+- Snapshot clauses link to `#cs-crisis`, `#cs-turnaround`, `#cs-venture` and jump with headings visible (`scroll-mt-24`)
+
 #### Review checklist
 - Sections are semantic and vertically spaced consistently
 - Typography scale matches `DESIGN.md`

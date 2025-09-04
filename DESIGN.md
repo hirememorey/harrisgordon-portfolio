@@ -24,6 +24,7 @@ If an accent is needed later, choose one muted color and use very sparingly.
 - Global container: `max-w-5xl mx-auto container-px`
 - Vertical rhythm: `py-12 md:py-16 lg:py-20` per major section
 - Intra-section spacing: `space-y-4 md:space-y-6`
+- Hero and Operating System may be one step denser to satisfy fold acceptance (see below)
 
 #### Components (utility-first)
 - Section wrapper: `w-full py-16 md:py-20 lg:py-24`
@@ -35,6 +36,11 @@ If an accent is needed later, choose one muted color and use very sparingly.
 - Default: left-align all multi-line content within the reading measure.
 - Exceptions: the hero headline may be centered; the Operating System section heading may be centered on small screens only. From `md` and up, headings and all body/list content are left-aligned.
 - Prefer typographic scale, spacing, and subtle surfaces to convey emphasis rather than introducing multiple alignment systems.
+
+#### Above‑the‑fold acceptance
+- Targets: 1280×800 and 1440×900
+- Without scrolling, show: name, thesis, primary CTA + Email/LinkedIn, a one‑sentence results snapshot, and the full Operating System block.
+- Snapshot clauses are links to specific case studies.
 
 #### Accessibility
 - Maintain sufficient color contrast (WCAG AA+).
