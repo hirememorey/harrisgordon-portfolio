@@ -25,8 +25,8 @@ npm run preview
 
 #### Project structure (key files)
 - `astro.config.mjs`: Astro config. Tailwind v4 is integrated via `@tailwindcss/vite`.
-- `src/styles/global.css`: Imports Tailwind and defines minimal base styles and small utilities.
-- `src/layouts/Layout.astro`: Imports the global stylesheet and provides a clean, centered content shell.
+- `src/styles/global.css`: Imports Tailwind and defines minimal base styles and small utilities (`section-y`, `measure`).
+- `src/layouts/Layout.astro`: Imports the global stylesheet and provides a clean, centered content shell with a reading measure.
 - `src/pages/index.astro`: The single page. Add the four sections here.
 
 #### Styling
@@ -60,6 +60,6 @@ npx astro telemetry disable
   - Then rerun the requested command.
 
 #### What to edit next
-Work in `src/pages/index.astro`. The base layout and global styles are ready; follow `NEXT_STEPS.md` for the section structure. Case studies now use a bifurcated layout: always-visible Results + Playbook with the narrative (Situation + Intervention) behind a native `<details>/<summary>`—prefer this no-JS pattern unless richer behavior is required.
+Work in `src/pages/index.astro`. The base layout and global styles are ready; use the global `section-y` rhythm and reading `measure`. Case studies use a bifurcated layout: always-visible Results + Playbook with the narrative (Situation + Intervention) behind a native `<details>/<summary>`—with explicit “Read full story/Hide full story” labels. Prefer this no-JS pattern unless richer behavior is required. Optional metadata badges render if provided.
 
 

@@ -12,14 +12,14 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 
 ### Current state
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
+- Reading measure applied to main container; global vertical rhythm utility (`section-y`) and base prose leading in place.
 - Homepage assembled with `Hero`, `OperatingSystem`, and three populated `CaseStudy` entries.
-- `CaseStudy` is now a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Labels swap via CSS using group-open.
+- `CaseStudy` is a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit (“Read full story/Hide full story”). Optional metadata badges render if provided.
 
 ### What’s left (high-signal)
-1) Typography and spacing polish (see ROADMAP.md). Ensure consistent vertical rhythm across sections and responsive heading scales.
-2) Apply the Tailwind refinements listed in ROADMAP.md (spacing, typography, responsive tweaks).
-3) Add basic SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
-4) Decide on deployment target (Vercel/Netlify/Cloudflare) and set up a CI deploy.
+1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
+2) Decide on deployment target (Vercel/Netlify/Cloudflare) and set up a CI deploy; add preview deploys.
+3) Optional: lightweight analytics (Plausible/Umami).
 
 ### How to run
 ```bash

@@ -3,13 +3,11 @@
 ### P0 — Content & polish
 - [x] Populate all `CaseStudy` props in `index.astro` (Situation, Intervention, Playbook, Key Results)
 - [x] Refactor `CaseStudy` to bifurcated layout (Results + Playbook visible; narrative behind toggle)
-- [x] Refine spacing rhythm across sections: use `py-16 md:py-20 lg:py-24` consistently
-- [x] Typography hierarchy pass per file:
-  - Hero: `h1 leading-tight`, `h2 text-2xl md:text-3xl`, paragraph `text-lg md:text-xl`
-  - Operating System: `h2 text-3xl md:text-4xl`, paragraph `text-lg md:text-xl`
-  - CaseStudy: titles `text-xl md:text-2xl`, lists `leading-relaxed`
-- [x] Improve summary/button sizing responsiveness (Hero CTA, CaseStudy summary toggle)
-- [x] Convert `CaseStudy` toggle to native `<details>/<summary>` (no JS)
+- [x] Establish global rhythm/utilities: `section-y` and `measure` (~72ch)
+- [x] Apply rhythm to `Hero`, `OperatingSystem`, and `#proof` sections
+- [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
+- [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
+- [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)
@@ -30,6 +28,6 @@
 ### Style changes implemented
 - Operating System section: added `scroll-mt-24`; increased vertical padding
 - Proof section heading: `text-3xl md:text-4xl font-semibold leading-tight`
-- CaseStudy card: added `shadow-sm`; lists `leading-relaxed`; responsive summary sizing; Playbook emphasized
+- CaseStudy card: `shadow-sm`; lists `leading-relaxed` with consistent spacing; explicit disclosure labels; Playbook emphasized; optional badges
 
 

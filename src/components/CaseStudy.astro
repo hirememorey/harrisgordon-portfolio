@@ -6,6 +6,9 @@ const {
   situation = '',
   intervention = [],
   playbook = [],
+  role,
+  timeframe,
+  domain,
 } = Astro.props as {
   title: string;
   oneLiner: string;
@@ -13,6 +16,9 @@ const {
   situation: string;
   intervention: string[];
   playbook: string[];
+  role?: string;
+  timeframe?: string;
+  domain?: string;
 };
 ---
 
@@ -22,12 +28,19 @@ const {
 		<header class="space-y-2">
 			<h3 class="text-lg md:text-xl font-semibold tracking-tight">{title}</h3>
 			<p class="text-neutral-700">{oneLiner}</p>
+			{(role || timeframe || domain) && (
+				<div class="mt-2 flex flex-wrap gap-2 text-sm text-neutral-700">
+					{role && (<span class="inline-flex items-center rounded-md border border-neutral-200 bg-neutral-50 px-2 py-0.5">{role}</span>)}
+					{timeframe && (<span class="inline-flex items-center rounded-md border border-neutral-200 bg-neutral-50 px-2 py-0.5">{timeframe}</span>)}
+					{domain && (<span class="inline-flex items-center rounded-md border border-neutral-200 bg-neutral-50 px-2 py-0.5">{domain}</span>)}
+				</div>
+			)}
 		</header>
 
 		{keyResults?.length > 0 && (
 			<section class="mt-4">
 				<h4 class="text-base md:text-lg font-medium">Key Results</h4>
-				<ul class="mt-2 list-disc pl-5 space-y-1 text-neutral-800 leading-relaxed">
+				<ul class="mt-2 list-disc pl-5 space-y-2 text-neutral-800 leading-relaxed">
 					{keyResults.map((item) => <li>{item}</li>)}
 				</ul>
 			</section>
@@ -36,7 +49,7 @@ const {
 		{playbook?.length > 0 && (
 			<section class="mt-6">
 				<h4 class="text-base md:text-lg font-semibold">My Repeatable Playbook</h4>
-				<ol class="mt-2 list-decimal pl-5 space-y-1 text-neutral-900 leading-relaxed rounded-md border border-neutral-200 bg-neutral-50 p-3 md:p-4">
+				<ol class="mt-2 list-decimal pl-5 space-y-2 text-neutral-900 leading-relaxed rounded-md border border-neutral-200 bg-neutral-50 p-3 md:p-4">
 					{playbook.map((step) => <li>{step}</li>)}
 				</ol>
 			</section>
@@ -45,8 +58,8 @@ const {
 		<!-- COLLAPSIBLE: Situation + Intervention -->
 		<details class="mt-6 group cs-disclosure">
 			<summary class="w-full cursor-pointer inline-flex items-center rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm md:text-base text-slate-900 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 select-none">
-				<span class="group-open:inline hidden">Hide the Full Turnaround</span>
-				<span class="group-open:hidden inline">Show the Full Turnaround</span>
+				<span class="group-open:inline hidden">Hide full story</span>
+				<span class="group-open:hidden inline">Read full story</span>
 			</summary>
 
 			<div class="mt-6 space-y-6 text-neutral-800">
@@ -57,7 +70,7 @@ const {
 				<div>
 					<h4 class="text-base md:text-lg font-medium">My Intervention</h4>
 					{intervention?.length > 0 && (
-						<ol class="mt-2 list-decimal pl-5 space-y-1 leading-relaxed">
+						<ol class="mt-2 list-decimal pl-5 space-y-2 leading-relaxed">
 							{intervention.map((step) => <li>{step}</li>)}
 						</ol>
 					)}

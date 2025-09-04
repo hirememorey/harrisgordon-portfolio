@@ -25,4 +25,12 @@
   .prose-base {
     @apply leading-relaxed text-balance;
   }
+  /* Vertical section rhythm utility */
+  .section-y {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  /* Reading measure utility (~72ch) */
+  .measure {
+    max-width: 72ch;
+  }
 }
