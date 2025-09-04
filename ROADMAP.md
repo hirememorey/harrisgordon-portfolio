@@ -29,5 +29,6 @@
 - Operating System section: added `scroll-mt-24`; increased vertical padding
 - Proof section heading: `text-3xl md:text-4xl font-semibold leading-tight`
 - CaseStudy card: `shadow-sm`; lists `leading-relaxed` with consistent spacing; explicit disclosure labels; Playbook emphasized; optional badges
+- Alignment normalized: left-aligned body across sections; OS heading centered only on small screens; headings and body left-aligned from `md+`.
 
 

@@ -39,6 +39,7 @@ Open the printed local URL.
 ### Known considerations
 - Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.
 - Maintain semantic HTML and accessible focus/ring states.
+- Alignment system: single axis for body copy (left-aligned). Exceptions: hero headline can be centered; Operating System heading is centered on small screens only and left-aligned from `md` up. All multi-line text remains left-aligned at all sizes.
 
 If you need more detail or open questions, see ROADMAP.md and CASE_STUDIES_TODO.md.
 

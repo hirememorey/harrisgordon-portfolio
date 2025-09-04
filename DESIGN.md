@@ -31,6 +31,11 @@ If an accent is needed later, choose one muted color and use very sparingly.
 - Card/surface (if needed): `rounded-lg border border-neutral-200 p-6 md:p-8 bg-white/80 shadow-sm`
 - Disclosure/accordion buttons: focus-visible outlines; use native `<details>/<summary>` with `group-open` for toggled text
 
+#### Alignment
+- Default: left-align all multi-line content within the reading measure.
+- Exceptions: the hero headline may be centered; the Operating System section heading may be centered on small screens only. From `md` and up, headings and all body/list content are left-aligned.
+- Prefer typographic scale, spacing, and subtle surfaces to convey emphasis rather than introducing multiple alignment systems.
+
 #### Accessibility
 - Maintain sufficient color contrast (WCAG AA+).
 - Use semantic HTML: `header`, `main`, `section`, `footer`.
