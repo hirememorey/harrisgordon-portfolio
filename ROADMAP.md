@@ -8,8 +8,11 @@
 - [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
 - [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
 - [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
-- [x] Reorder sections to Hero → Operating System → Proof
+- [x] Reorder sections to Hero → Operating System → Proof → Deep Dive (System Architecture)
 - [x] Add snapshot in Hero with links to case studies
+- [x] Add Deep Dive section for technical system architecture showcase
+- [x] Resolve "Playbook" terminology ambiguity by renaming technical section
+- [x] Update technical case study content with personal narrative approach
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)

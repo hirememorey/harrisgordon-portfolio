@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import OperatingSystem from '../components/OperatingSystem.astro';
 import CaseStudy from '../components/CaseStudy.astro';
+import PlaybooksSection from '../components/PlaybooksSection.astro';
 ---
 
 <Layout>
@@ -78,6 +79,39 @@ import CaseStudy from '../components/CaseStudy.astro';
 					"Find the non-obvious regulatory 'cheat code'.",
 					"Build the minimum viable assets to get to a pilot."
 				]}
+			/>
+			</div>
+		</div>
+	</section>
+
+	<section id="playbooks" class="w-full pt-4 md:pt-6 lg:pt-8 pb-10 md:pb-12 lg:pb-16 scroll-mt-24">
+		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">Deep Dive: System Architecture</h2>
+		<p class="mt-3 text-base md:text-lg leading-relaxed text-neutral-800">
+			Beyond business strategy, I architect complex technical systems from first principles. These playbooks show how I solve problems that don't have existing solutions by building them myself.
+		</p>
+		<div class="mt-6 space-y-6">
+			<div id="playbook-yesand" class="scroll-mt-24">
+			<PlaybooksSection
+				title="Architecting a 0-to-1 Technical System from First Principles"
+				oneLiner="This project started as a personal need. I wanted to get musical ideas out of my head and into my computer faster. I looked for a tool that let me use simple commands to control my music but found nothing. So I built it myself. The work became a deep dive into system architecture. I built a Python 'brain' for natural language commands that connects to a professional-grade C++ audio engine. It's a case study in solving a personal problem by architecting a complex technical system from first principles."
+				keyResults={[
+					'Architected a complete, hybrid Python-to-C++ system with a real-time, thread-safe communication layer.',
+					'Built a professional-grade C++ audio engine that intelligently translates musical concepts into MIDI transformations.',
+					'Delivered a robust natural language command interface, turning a personal workflow into a scalable tool.'
+				]}
+				situation="I wanted to get musical ideas out of my head and into my computer faster. I looked for a tool that let me use simple commands to control my music but found nothing that met my requirements. The existing solutions were either too complex, too limited, or didn't integrate with professional audio workflows."
+				intervention={[
+					'Phase 1: Problem Definition & Architecture. I mapped the technical requirements: natural language parsing, real-time MIDI control, professional audio integration, and modular design. I chose Python for the command interface and C++ for the audio engine, with OSC for communication.',
+					'Phase 2: Core System Development. I built the Python command parser with music theory integration, created the JUCE-based C++ audio plugin with real-time MIDI processing, and implemented the OSC communication layer for parameter control.',
+					'Phase 3: Integration & Documentation. I created comprehensive documentation, built CLI interfaces for chat integration, and designed a modular architecture that others could understand and extend.'
+				]}
+				playbook={[
+					'Define the technical requirements when no existing solution meets your needs.',
+					'Choose the right tools for each layer of the system architecture.',
+					'Build with documentation and modularity from day one.',
+					'Create interfaces that others can understand and extend.'
+				]}
+				githubUrl="https://github.com/hirememorey/yesand-music"
 			/>
 			</div>
 		</div>

@@ -8,20 +8,23 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - Global CSS: `src/styles/global.css`
 - Layout shell: `src/layouts/Layout.astro` (imports Inter font, base meta)
 - Page: `src/pages/index.astro`
-- Components: `Hero.astro`, `OperatingSystem.astro`, `CaseStudy.astro`
+- Components: `Hero.astro`, `OperatingSystem.astro`, `CaseStudy.astro`, `PlaybooksSection.astro`
 
 ### Current state
-- Section order is Hero → Operating System → Proof.
+- Section order is Hero → Operating System → Proof → Deep Dive (System Architecture).
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
 - Reading measure applied to main container; global vertical rhythm utility (`section-y`) and base prose leading in place.
 - `Hero` includes a one‑sentence results snapshot with links to each case study; CTA jumps to `#proof`.
 - `OperatingSystem` is intentionally one step denser so the full block appears in the first view on common laptop sizes.
-- `CaseStudy` is a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit (“Read full story/Hide full story”). Optional metadata badges render if provided.
+- `CaseStudy` is a bifurcated card: always-visible Key Results and Playbook, with the detailed narrative (Situation + Intervention) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit ("Read full story/Hide full story"). Optional metadata badges render if provided.
+- `PlaybooksSection` is a specialized component for technical case studies with GitHub integration, featuring the same bifurcated layout as CaseStudy but with additional technical implementation details.
 
 ### Recent decisions
 - The hero snapshot sentence begins with a small inline label: `Case studies:`. It remains in the same paragraph as the three links to preserve the fold.
 - Spacing between Hero and Operating System is slightly tightened via Hero bottom padding and Operating System top padding. Check fold at 1280×800 and 1440×900 after copy changes.
 - Visible copy avoids em/en dashes and heavy punctuation. Prefer short sentences and simple phrasing. The meta description also avoids em dashes.
+- Resolved "Playbook" terminology ambiguity by renaming technical section to "Deep Dive: System Architecture" to distinguish from business case study playbooks.
+- Updated technical case study content to focus on personal problem-solving narrative and system architecture outcomes.
 
 ### What’s left (high-signal)
 1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
