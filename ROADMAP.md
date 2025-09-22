@@ -8,10 +8,10 @@
 - [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
 - [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
 - [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
-- [x] Reorder sections to Hero (Thesis) → Proof (Business Case Studies) → Operating System (Unfair Advantage) → Deep Dive (Technical Architecture)
+- [x] Reorder sections to Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology & Proof)
 - [x] Add snapshot in Hero with links to case studies
-- [x] Add Deep Dive section for technical system architecture showcase
-- [x] Resolve "Playbook" terminology ambiguity by renaming technical section
+- [x] Merge Operating System and Deep Dive sections into unified narrative flow
+- [x] Eliminate PlaybooksSection component and unify all case studies under CaseStudy component
 - [x] Update technical case study content with personal narrative approach
 - [x] Position YesAnd Music as proof point for operating system methodology
 - [x] Update Hero CTA to "Explore the Proof" reflecting new narrative flow
@@ -21,10 +21,9 @@
 - [x] Restructure expanded view to show Situation + Intervention + Key Results
 - [x] Update case study content with new narrative structure
 - [x] Reposition Operating System section to focus on AI-native development methodology
-- [x] Reposition Deep Dive section to frame YesAnd Music as proof of the OS
 - [x] Implement shared base component architecture with BaseCaseStudy.astro
-- [x] Add GitHub link functionality to both CaseStudy and PlaybooksSection components
-- [x] Eliminate code duplication while preserving intentional design differences
+- [x] Add GitHub link functionality to CaseStudy component
+- [x] Eliminate code duplication with unified component architecture
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)

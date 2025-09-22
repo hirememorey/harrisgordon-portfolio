@@ -8,31 +8,27 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - Global CSS: `src/styles/global.css`
 - Layout shell: `src/layouts/Layout.astro` (imports Inter font, base meta)
 - Page: `src/pages/index.astro`
-- Components: `Hero.astro`, `BaseCaseStudy.astro`, `CaseStudy.astro`, `PlaybooksSection.astro`
+- Components: `Hero.astro`, `BaseCaseStudy.astro`, `CaseStudy.astro`
 
 ### Current state
-- Section order is Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS).
+- Section order is Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology & Proof).
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
 - Reading measure applied to main container; global vertical rhythm utility (`section-y`) and base prose leading in place.
 - `Hero` includes a one‑sentence results snapshot with links to each case study; CTA "Explore the Proof" jumps to `#proof`.
 - `Proof` section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities.
-- `Operating System` section showcases AI-native development methodology with three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine.
-- `Deep Dive` section demonstrates the methodology in action through YesAnd Music as proof of the OS.
+- `Operating System` section showcases AI-native development methodology with three core pillars AND demonstrates it in action through YesAnd Music as unified proof.
 - `BaseCaseStudy` is a shared base component containing common structure (header, playbook section, collapsible details) and GitHub link functionality.
-- `CaseStudy` extends BaseCaseStudy for business case studies: always-visible Title, Quantified Outcome, and Playbook, with Key Results in the collapsible section. Supports optional GitHub links.
-- `PlaybooksSection` extends BaseCaseStudy for technical case studies: always-visible Title, One-liner, Key Results, and Playbook, with Situation + Intervention in the collapsible section. Supports optional GitHub links.
+- `CaseStudy` extends BaseCaseStudy for all case studies: always-visible Title, Quantified Outcome, and Playbook, with Key Results in the collapsible section. Supports optional GitHub links.
+- **UNIFIED COMPONENT ARCHITECTURE**: All case studies now use the single `CaseStudy` component for consistency and maintainability.
 
 ### Recent decisions
-- **Re-architected information hierarchy** to follow thesis-driven narrative flow: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS).
+- **Unified section architecture**: Merged Operating System and Deep Dive sections into a single, cohesive section that presents methodology and immediately proves it with YesAnd Music.
+- **Simplified component architecture**: Eliminated `PlaybooksSection.astro` component and unified all case studies under the single `CaseStudy.astro` component for consistency and maintainability.
 - The hero snapshot sentence begins with a small inline label: `Case studies:`. It remains in the same paragraph as the three links to preserve the fold.
 - **Updated Hero CTA** from "View My Playbooks" to "Explore the Proof" to better reflect the new narrative flow.
-- **Repositioned Operating System section** to focus on AI-native development methodology with three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine.
-- **Repositioned Deep Dive section** to frame YesAnd Music as proof of the AI-native operating system in action.
-- **Enhanced section descriptions** to better connect the narrative and show how each section builds on the previous one.
-- Visible copy avoids em/en dashes and heavy punctuation. Prefer short sentences and simple phrasing. The meta description also avoids em dashes.
-- Resolved "Playbook" terminology ambiguity by renaming technical section to "Deep Dive: Technical Architecture" to distinguish from business case study playbooks.
+- **Enhanced narrative flow**: Operating System section now seamlessly flows from methodology explanation to concrete proof through YesAnd Music, creating a unified user experience.
 - **Evolved CaseStudy component to "Interactive Proof"**: Replaced `oneLiner` with `quantifiedOutcome` prop for immediate impact. Collapsed view now shows Title + Quantified Outcome + Playbook. Expanded view contains Situation + Intervention + Key Results for complete narrative proof.
-- **Implemented shared base component architecture**: Created `BaseCaseStudy.astro` to eliminate code duplication while preserving intentional design differences between business and technical case studies. Both `CaseStudy.astro` and `PlaybooksSection.astro` now support optional GitHub links with consistent styling.
+- **Implemented shared base component architecture**: Created `BaseCaseStudy.astro` to eliminate code duplication. All case studies now use the unified `CaseStudy.astro` component with optional GitHub links and consistent styling.
 
 ### What’s left (high-signal)
 1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
@@ -60,9 +56,7 @@ Open the printed local URL.
 
 **CaseStudy props (extends BaseCaseStudy):**
 - `quantifiedOutcome: string`, `keyResults: string[]` (Key Results in collapsible section)
-
-**PlaybooksSection props (extends BaseCaseStudy):**
-- `oneLiner: string`, `keyResults: string[]` (Key Results in always-visible section)
+- All case studies now use the unified `CaseStudy` component
 
 ### Known considerations
 - Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.

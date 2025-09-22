@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import CaseStudy from '../components/CaseStudy.astro';
-import PlaybooksSection from '../components/PlaybooksSection.astro';
 ---
 
 <Layout>
@@ -87,17 +86,17 @@ import PlaybooksSection from '../components/PlaybooksSection.astro';
 		</div>
 	</section>
 
-	<!-- Operating System: AI-Native Development Methodology -->
+	<!-- Operating System: AI-Native Development Methodology & Proof -->
 	<section id="operating-system" class="w-full pt-4 md:pt-6 lg:pt-8 pb-10 md:pb-12 lg:pb-16 scroll-mt-24">
 		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">My Operating System: An AI-Native Workflow for Building</h2>
 		<p class="mt-3 text-base md:text-lg leading-relaxed text-neutral-800">
-			To build high-quality systems under pressure, I've engineered a repeatable, AI-assisted operating system. It's designed to de-risk development, solve for context-drift, and turn a stateless LLM into a true strategic partner.
+			To build high-quality systems under pressure, I've engineered a repeatable, AI-assisted operating system. It's designed to de-risk development, solve for context-drift, and turn a stateless LLM into a true strategic partner. Below, I demonstrate this methodology in action through the development of YesAnd Music.
 		</p>
 		<div class="mt-6 space-y-6">
 			<div id="os-methodology" class="scroll-mt-24">
-			<PlaybooksSection
+			<CaseStudy
 				title="The Core Pillars of My AI-Native Development System"
-				oneLiner="A systematic approach to building complex systems by leveraging AI as a strategic partner, not just a coding assistant. This methodology ensures consistent quality, reduces context drift, and transforms every project into a learning opportunity."
+				quantifiedOutcome="A systematic approach to building complex systems by leveraging AI as a strategic partner, not just a coding assistant. This methodology ensures consistent quality, reduces context drift, and transforms every project into a learning opportunity."
 				keyResults={[
 					'De-risked development by forcing AI to anticipate failure before implementation.',
 					'Solved context-drift by maintaining persistent, version-controlled documentation.',
@@ -117,20 +116,11 @@ import PlaybooksSection from '../components/PlaybooksSection.astro';
 				]}
 			/>
 			</div>
-		</div>
-	</section>
 
-	<!-- Deep Dive: Proof of the OS -->
-	<section id="deep-dive" class="w-full pt-4 md:pt-6 lg:pt-8 pb-10 md:pb-12 lg:pb-16 scroll-mt-24">
-		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">Proof of the OS: Architecting 'YesAnd Music'</h2>
-		<p class="mt-3 text-base md:text-lg leading-relaxed text-neutral-800">
-			The 'YesAnd Music' platform is the tangible result of my AI-native development system. It's a sophisticated, multi-faceted music technology platform with a real-time control plane, a professional-grade JUCE MIDI plugin, and an offline semantic editor. Its robust, clean architecture and comprehensive, automated QA system were co-architected with my AI partner, proving the power of a systematic approach to building.
-		</p>
-		<div class="mt-6 space-y-6">
 			<div id="tech-architecture" class="scroll-mt-24">
-			<PlaybooksSection
+			<CaseStudy
 				title="YesAnd Music: A Complete AI-Native Development Case Study"
-				oneLiner="This project demonstrates my AI-native operating system in action. I wanted to get musical ideas out of my head and into my computer faster, but found no existing solution. So I built it myself using my systematic approach—turning a personal workflow problem into a sophisticated technical platform through AI-assisted development."
+				quantifiedOutcome="This project demonstrates my AI-native operating system in action. I wanted to get musical ideas out of my head and into my computer faster, but found no existing solution. So I built it myself using my systematic approach—turning a personal workflow problem into a sophisticated technical platform through AI-assisted development."
 				keyResults={[
 					'Architected a complete, hybrid Python-to-C++ system with real-time, thread-safe communication.',
 					'Built a professional-grade C++ audio engine that intelligently translates musical concepts into MIDI transformations.',

@@ -16,15 +16,14 @@ Local dev runs at `http://localhost:4321`.
 - `src/styles/global.css` — Tailwind v4 entry and small utilities (`section-y` rhythm, `measure` ~72ch)
 - `src/pages/index.astro` — single-page composition
 - `src/components/CaseStudy.astro` — bifurcated case study card: Key Results + Playbook always visible; narrative via native `<details>/<summary>` (no JS); explicit disclosure labels; optional metadata badges
-- `src/components/PlaybooksSection.astro` — technical case study component with GitHub integration for system architecture projects
+- `src/components/BaseCaseStudy.astro` — shared base component with common structure and GitHub link functionality
 
 ### What's implemented
-- Section order: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS)
+- Section order: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology & Proof)
 - Hero includes a one‑sentence results snapshot with links to each case study. The snapshot is prefixed inline with `Case studies:`
 - Primary CTA "Explore the Proof" jumps to `#proof`; Email/LinkedIn shown inline
 - Proof section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities
-- Operating System section showcases AI-native development methodology with three core pillars
-- Deep Dive section demonstrates the methodology in action through YesAnd Music as proof of the OS
+- Operating System section showcases AI-native development methodology with three core pillars AND demonstrates it in action through YesAnd Music as unified proof
 - Global vertical rhythm (`section-y`) and reading measure applied to improve scan/read
 - CaseStudy lists normalized for scannability; explicit disclosure labels; optional Role/Timeframe/Domain badges
 - Native details/summary for the narrative; Title, Quantified Outcome, and Playbook are always visible (no client JS)
