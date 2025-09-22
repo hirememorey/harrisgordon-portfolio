@@ -1,0 +1,536 @@
+# Concatenated Documentation
+Generated on: 2025-09-22T18:14:21.941Z
+Total files: 7
+
+This file contains all markdown files from the project concatenated together.
+
+================================================================================
+FILE: CASE_STUDIES_TODO.md
+================================================================================
+
+## Case Studies — Content (Archived TODO)
+
+Status: Complete. All case study content is populated in `src/pages/index.astro` and rendered via `src/components/CaseStudy.astro`.
+
+This document is kept as a reference for the data shape only. Make content edits directly in `index.astro` to avoid duplication/drift.
+
+### Data shape
+- `title: string`
+- `quantifiedOutcome: string`
+- `keyResults: string[]`
+- `situation: string`
+- `intervention: string[]` (ordered steps)
+- `playbook: string[]` (ordered, repeatable steps)
+
+### Where to edit
+- Content: `src/pages/index.astro` (props on each `CaseStudy` instance)
+- Structure & styles: `src/components/CaseStudy.astro`
+
+### Example usage (in `index.astro`)
+```astro
+<CaseStudy
+  title="Turnaround Operator"
+  quantifiedOutcome="Saved $900k in at-risk ARR & Unlocked a $2.2M Enterprise Pipeline"
+  keyResults={["Result A", "Result B"]}
+  situation="One concise paragraph here."
+  intervention={["Step 1", "Step 2", "Step 3"]}
+  playbook={["Repeatable 1", "Repeatable 2", "Repeatable 3"]}
+/>
+```
+
+
+
+
+================================================================================
+END OF FILE: CASE_STUDIES_TODO.md
+================================================================================
+
+
+================================================================================
+FILE: DESIGN.md
+================================================================================
+
+### Design Guidelines
+
+#### Philosophy
+- Less is more. Prioritize clarity, whitespace, and hierarchy.
+- Use a light background, dark neutral text, and minimal accent.
+- Typography carries the brand. Keep it crisp and readable.
+
+#### Color
+- Background: `#ffffff`
+- Text: neutral-900 (Tailwind)
+- Muted text: neutral-600/700
+- Borders/accents: neutral-200/300
+
+If an accent is needed later, choose one muted color and use very sparingly.
+
+#### Typography
+- Set by Tailwind defaults; we keep it simple.
+- Section titles: `text-3xl md:text-4xl font-semibold tracking-tight`
+- Subheads: `text-xl md:text-2xl font-medium`
+- Body: `text-base md:text-lg leading-relaxed`
+- Links: underlined, neutral-900, subtle hover decoration
+
+#### Spacing & Layout
+- Global container: `max-w-5xl mx-auto container-px`
+- Vertical rhythm: `py-12 md:py-16 lg:py-20` per major section
+- Intra-section spacing: `space-y-4 md:space-y-6`
+- Hero and Operating System may be one step denser to satisfy fold acceptance (see below)
+
+#### Components (utility-first)
+- Section wrapper: `w-full py-16 md:py-20 lg:py-24`
+- Section header group: `space-y-2`
+- Card/surface (if needed): `rounded-lg border border-neutral-200 p-6 md:p-8 bg-white/80 shadow-sm`
+- Disclosure/accordion buttons: focus-visible outlines; use native `<details>/<summary>` with `group-open` for toggled text
+
+#### Alignment
+- Default: left-align all multi-line content within the reading measure.
+- Exceptions: the hero headline may be centered; the Operating System section heading may be centered on small screens only. From `md` and up, headings and all body/list content are left-aligned.
+- Prefer typographic scale, spacing, and subtle surfaces to convey emphasis rather than introducing multiple alignment systems.
+
+#### Above‑the‑fold acceptance
+- Targets: 1280×800 and 1440×900
+- Without scrolling, show: name, thesis, primary CTA + Email/LinkedIn, a one‑sentence results snapshot, and the full Operating System block.
+- Snapshot clauses are links to specific case studies.
+
+#### Accessibility
+- Maintain sufficient color contrast (WCAG AA+).
+- Use semantic HTML: `header`, `main`, `section`, `footer`.
+- Ensure focus states are visible and keyboard nav works.
+
+#### Assets
+- Favicon at `/public/favicon.svg`.
+- Avoid heavy images; prefer text-first content.
+
+
+
+#### Snapshot label
+- In the hero snapshot sentence, prepend a short inline label: `Case studies:`.
+- Keep it in the same paragraph as the three links. Do not introduce a new line or badge.
+- Style: body size, neutral-700, small right margin.
+
+#### Hero ↔ Operating System spacing
+- Hero section uses slightly reduced bottom padding; Operating System uses slightly reduced top padding to tighten the gap while preserving the fold on 1280×800 and 1440×900.
+- Verify the fold after any copy changes; prefer adjusting only these paddings rather than global rhythm.
+
+#### Copy & punctuation
+- Avoid em/en dashes in visible site copy. Prefer short, clear sentences and minimal commas.
+- Examples:
+  - Use `0-1`, not `0–1`.
+  - Use `go to market`, not `Go-to-Market`.
+  - Replace long em-dash clauses with short sentences or simple prepositions.
+
+
+================================================================================
+END OF FILE: DESIGN.md
+================================================================================
+
+
+================================================================================
+FILE: DEVELOPMENT.md
+================================================================================
+
+### Development
+
+This project is an Astro v5 + Tailwind CSS v4 site for Harris Gordon's portfolio.
+
+#### Prerequisites
+- Node.js 20+ (LTS recommended)
+- npm 10+
+
+#### Install
+```bash
+npm install
+```
+
+#### Run locally
+```bash
+npm run dev
+```
+Then open the local URL printed by Astro.
+
+#### Build and preview
+```bash
+npm run build
+npm run preview
+```
+
+#### Project structure (key files)
+- `astro.config.mjs`: Astro config. Tailwind v4 is integrated via `@tailwindcss/vite`.
+- `src/styles/global.css`: Imports Tailwind and defines minimal base styles and small utilities (`section-y`, `measure`).
+- `src/layouts/Layout.astro`: Imports the global stylesheet and provides a clean, centered content shell with a reading measure.
+- `src/pages/index.astro`: The single page. Section order is Hero → Operating System → Proof.
+
+#### Styling
+- Tailwind v4 style entry: `@import "tailwindcss";` in `src/styles/global.css`.
+- No `tailwind.config.js` is needed for the base; use defaults unless customization is required.
+
+#### Commands
+- `npm run dev`: Start dev server
+- `npm run build`: Production build to `dist/`
+- `npm run preview`: Serve the built site locally
+
+#### Telemetry
+Astro collects anonymous telemetry. To opt out:
+```bash
+npx astro telemetry disable
+```
+
+#### Troubleshooting
+- npm EACCES errors on macOS (cache permissions):
+  - Quick fix (per-command cache):
+    ```bash
+    npm_config_cache="$HOME/.cache/npm-tmp" npm install
+    npm_config_cache="$HOME/.cache/npm-tmp" npx astro add tailwind --yes
+    ```
+  - Permanent fix:
+    ```bash
+    sudo chown -R $(id -u):$(id -g) "$HOME/.npm"
+    ```
+- "Cannot find module 'astro/config'":
+  - Ensure dependencies are installed: `npm install`
+  - Then rerun the requested command.
+
+#### What to edit next
+Work in `src/pages/index.astro`. The base layout and global styles are ready; use the global `section-y` rhythm and reading `measure`. Case studies use a bifurcated layout: always-visible Results + Playbook with the narrative (Situation + Intervention) behind a native `<details>/<summary>`—with explicit “Read full story/Hide full story” labels. Optional metadata badges render if provided.
+
+Hero guidance:
+- One-sentence thesis in first person.
+- One-sentence results snapshot with 2–3 clauses. Each clause links to a case study anchor (`#cs-crisis`, `#cs-turnaround`, `#cs-venture`).
+- CTA `View My Playbooks` links to `#proof`; Email and LinkedIn inline.
+
+Fold validation:
+- Targets: 1280×800 and 1440×900.
+- Without scrolling: name, thesis, CTA + Email/LinkedIn, snapshot, and full Operating System block are visible.
+
+
+
+
+================================================================================
+END OF FILE: DEVELOPMENT.md
+================================================================================
+
+
+================================================================================
+FILE: HANDOFF.md
+================================================================================
+
+## Developer Handoff
+
+This doc brings you up to speed fast and tells you exactly what to do next.
+
+### Project snapshot
+- Stack: Astro v5 + Tailwind CSS v4 (via `@tailwindcss/vite`)
+- Node: 20+, npm: 10+
+- Global CSS: `src/styles/global.css`
+- Layout shell: `src/layouts/Layout.astro` (imports Inter font, base meta)
+- Page: `src/pages/index.astro`
+- Components: `Hero.astro`, `CaseStudy.astro`, `PlaybooksSection.astro`
+
+### Current state
+- Section order is Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS).
+- Layout updated with title, meta description, viewport, Inter font, and base body classes.
+- Reading measure applied to main container; global vertical rhythm utility (`section-y`) and base prose leading in place.
+- `Hero` includes a one‑sentence results snapshot with links to each case study; CTA "Explore the Proof" jumps to `#proof`.
+- `Proof` section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities.
+- `Operating System` section showcases AI-native development methodology with three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine.
+- `Deep Dive` section demonstrates the methodology in action through YesAnd Music as proof of the OS.
+- `CaseStudy` is a bifurcated card: always-visible Title, Quantified Outcome, and Playbook, with the detailed narrative (Situation + Intervention + Key Results) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit ("Read full story/Hide full story"). Optional metadata badges render if provided.
+- `PlaybooksSection` is a specialized component for technical case studies with GitHub integration, featuring the same bifurcated layout as CaseStudy but with additional technical implementation details.
+
+### Recent decisions
+- **Re-architected information hierarchy** to follow thesis-driven narrative flow: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS).
+- The hero snapshot sentence begins with a small inline label: `Case studies:`. It remains in the same paragraph as the three links to preserve the fold.
+- **Updated Hero CTA** from "View My Playbooks" to "Explore the Proof" to better reflect the new narrative flow.
+- **Repositioned Operating System section** to focus on AI-native development methodology with three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine.
+- **Repositioned Deep Dive section** to frame YesAnd Music as proof of the AI-native operating system in action.
+- **Enhanced section descriptions** to better connect the narrative and show how each section builds on the previous one.
+- Visible copy avoids em/en dashes and heavy punctuation. Prefer short sentences and simple phrasing. The meta description also avoids em dashes.
+- Resolved "Playbook" terminology ambiguity by renaming technical section to "Deep Dive: Technical Architecture" to distinguish from business case study playbooks.
+- **Evolved CaseStudy component to "Interactive Proof"**: Replaced `oneLiner` with `quantifiedOutcome` prop for immediate impact. Collapsed view now shows Title + Quantified Outcome + Playbook. Expanded view contains Situation + Intervention + Key Results for complete narrative proof.
+
+### What’s left (high-signal)
+1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
+2) Decide on deployment target (Vercel/Netlify/Cloudflare) and set up a CI deploy; add preview deploys.
+3) Optional: lightweight analytics (Plausible/Umami).
+4) Create an OG image.
+
+### How to run
+```bash
+npm install
+npm run dev
+```
+Open the printed local URL.
+
+### Where to work
+- Content and structure: `src/pages/index.astro`
+- Section components: `src/components/*.astro`
+- Design system utilities: `src/styles/global.css`
+
+### CaseStudy data shape (for quick reference)
+- Props: `title: string`, `quantifiedOutcome: string`, `keyResults: string[]`, `situation: string`, `intervention: string[]`, `playbook: string[]`
+
+### Known considerations
+- Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.
+- Maintain semantic HTML and accessible focus/ring states.
+- Alignment system: single axis for body copy (left-aligned). Exceptions: hero headline can be centered; Operating System heading is centered on small screens only and left-aligned from `md` up. All multi-line text remains left-aligned at all sizes.
+
+### Fold acceptance criteria
+- Targets: 1280×800 and 1440×900
+- Without scrolling: name, thesis, CTA + Email/LinkedIn, and the one‑sentence results snapshot are visible.
+- Proof section should be visible to demonstrate business results immediately.
+
+If you need more detail or open questions, see ROADMAP.md and CASE_STUDIES_TODO.md.
+
+
+
+
+================================================================================
+END OF FILE: HANDOFF.md
+================================================================================
+
+
+================================================================================
+FILE: NEXT_STEPS.md
+================================================================================
+
+### Next Steps: Information Hierarchy Complete
+
+**STATUS: COMPLETED** - The page sections have been re-architected to follow a thesis-driven narrative flow.
+
+### Phase 4: AI-Native Development Methodology Repositioning
+
+**STATUS: COMPLETED** - The Operating System and Deep Dive sections have been repositioned to showcase AI-native development methodology.
+
+#### Current Section Order (IMPLEMENTED)
+1. **Hero (The Thesis)** - Name, thesis, call-to-action
+2. **Proof (Business Case Studies)** - Three case studies demonstrating Turnaround Operator & Venture Builder capabilities
+3. **Operating System (AI-Native Development Methodology)** - Three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine
+4. **Deep Dive (Proof of the OS)** - YesAnd Music as tangible demonstration of the AI-native methodology in action
+
+#### Section Purposes (IMPLEMENTED)
+- **Hero**: Establishes the thesis and value proposition with results snapshot
+- **Proof**: Leads with quantified business results to demonstrate capabilities
+- **Operating System**: Reveals the AI-native development methodology with three core pillars
+- **Deep Dive**: Demonstrates the methodology in action through YesAnd Music as proof of the OS
+
+#### Key Changes Made (IMPLEMENTED)
+- Reordered sections to follow thesis → proof → methodology → technical implementation flow
+- Updated Hero CTA from "View My Playbooks" to "Explore the Proof"
+- Repositioned Operating System section to focus on AI-native development methodology
+- Repositioned Deep Dive section to frame YesAnd Music as proof of the OS
+- Enhanced section descriptions to better connect the narrative
+- Removed separate OperatingSystem component (now integrated into main page structure)
+
+#### Content status
+- Case studies populated in `src/pages/index.astro` with full `oneLiner`, `keyResults`, `situation`, `intervention`, and `playbook` content.
+
+Example skeleton to paste into `src/pages/index.astro` (adjust copy later):
+
+```astro
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section id="hero" class="w-full py-16 md:py-20 lg:py-24">
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">Harris Gordon</h1>
+    <p class="mt-4 text-xl md:text-2xl text-neutral-700">Turnaround Operator & Venture Builder. Playbooks that ship outcomes.</p>
+    <a href="#proof" class="mt-8 inline-flex items-center rounded-md border border-neutral-300 px-4 py-2 hover:bg-neutral-50">Read the Playbooks</a>
+  </section>
+
+  <section id="operating-system" class="w-full py-12 md:py-16 lg:py-20">
+    <h2 class="text-2xl md:text-3xl font-semibold">Operating System</h2>
+    <div class="mt-4 space-y-3 text-neutral-800">
+      <p>How I diagnose, prioritize, and execute in complex environments.</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Assess reality fast: data, constraints, incentives.</li>
+        <li>Define the hill: single measurable target.</li>
+        <li>Sequence moves: smallest steps to compounding impact.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proof" class="w-full py-12 md:py-16 lg:py-20">
+    <h2 class="text-2xl md:text-3xl font-semibold">Proof</h2>
+    <div class="mt-6 divide-y divide-neutral-200 rounded-lg border border-neutral-200">
+      <details class="group">
+        <summary class="w-full cursor-pointer list-none px-4 py-3 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300">
+          <span class="font-medium">Case Study A</span>
+          <span class="ml-2 text-neutral-600">— outcome summary</span>
+        </summary>
+        <div class="px-4 pb-4 text-neutral-800">
+          <p>Key problem, actions, and measurable result.</p>
+        </div>
+      </details>
+      <details>
+        <summary class="w-full cursor-pointer list-none px-4 py-3 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300">Case Study B</summary>
+        <div class="px-4 pb-4 text-neutral-800">Details…</div>
+      </details>
+      <details>
+        <summary class="w-full cursor-pointer list-none px-4 py-3 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300">Case Study C</summary>
+        <div class="px-4 pb-4 text-neutral-800">Details…</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="competencies" class="w-full py-12 md:py-16 lg:py-20">
+    <h2 class="text-2xl md:text-3xl font-semibold">Core Competencies</h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ul class="space-y-2">
+        <li>Operational diagnostics</li>
+        <li>Go-to-market turnarounds</li>
+      </ul>
+      <ul class="space-y-2">
+        <li>Founder coaching</li>
+        <li>Systems design</li>
+      </ul>
+    </div>
+
+    <footer class="mt-16 border-top border-neutral-200 pt-6 text-sm text-neutral-700">
+      <p>Contact: <a href="mailto:harris@harrisgordon.com">harris@harrisgordon.com</a></p>
+    </footer>
+  </section>
+
+  <!-- End sections -->
+</Layout>
+```
+
+#### Fold validation checklist (UPDATED)
+- Viewports: 1280×800 and 1440×900
+- Above the fold: name, thesis, primary CTA + Email/LinkedIn, and one‑sentence results snapshot
+- Proof section should be visible to demonstrate business results immediately
+- Snapshot clauses link to `#cs-crisis`, `#cs-turnaround`, `#cs-venture` and jump with headings visible (`scroll-mt-24`)
+
+#### Review checklist
+- Sections are semantic and vertically spaced consistently
+- Typography scale matches `DESIGN.md`
+- Minimal visual noise; generous whitespace
+- Keyboard and screen-reader friendly disclosures
+
+
+
+
+================================================================================
+END OF FILE: NEXT_STEPS.md
+================================================================================
+
+
+================================================================================
+FILE: README.md
+================================================================================
+
+## Harris Gordon | Portfolio (Astro + Tailwind)
+
+Minimal, fast, and accessible portfolio site built with Astro v5 and Tailwind CSS v4.
+
+### Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+Local dev runs at `http://localhost:4321`.
+
+### Key files
+- `src/layouts/Layout.astro` — layout shell, meta, Inter font, applies reading measure
+- `src/styles/global.css` — Tailwind v4 entry and small utilities (`section-y` rhythm, `measure` ~72ch)
+- `src/pages/index.astro` — single-page composition
+- `src/components/CaseStudy.astro` — bifurcated case study card: Key Results + Playbook always visible; narrative via native `<details>/<summary>` (no JS); explicit disclosure labels; optional metadata badges
+- `src/components/PlaybooksSection.astro` — technical case study component with GitHub integration for system architecture projects
+
+### What's implemented
+- Section order: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS)
+- Hero includes a one‑sentence results snapshot with links to each case study. The snapshot is prefixed inline with `Case studies:`
+- Primary CTA "Explore the Proof" jumps to `#proof`; Email/LinkedIn shown inline
+- Proof section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities
+- Operating System section showcases AI-native development methodology with three core pillars
+- Deep Dive section demonstrates the methodology in action through YesAnd Music as proof of the OS
+- Global vertical rhythm (`section-y`) and reading measure applied to improve scan/read
+- CaseStudy lists normalized for scannability; explicit disclosure labels; optional Role/Timeframe/Domain badges
+- Native details/summary for the narrative; Title, Quantified Outcome, and Playbook are always visible (no client JS)
+- Single alignment axis: body copy left-aligned within the measure; hero headline may be centered; OS heading is centered only on small screens and left-aligned from `md` up.
+
+### Next steps
+- SEO/OG/Twitter meta + canonical URL in `Layout.astro`; consider `theme-color`
+- Choose deployment target (Vercel/Netlify/Cloudflare) and enable preview deploys
+- Optional: lightweight analytics (Plausible/Umami)
+
+### First‑view (fold) acceptance criteria
+- Viewport targets: 1280×800 and 1440×900
+- Without scrolling you should see: name, thesis, CTA + Email/LinkedIn, and the one‑sentence results snapshot
+- Snapshot clauses link to specific case studies (`#cs-crisis`, `#cs-turnaround`, `#cs-venture`)
+- Proof section should be visible to demonstrate business results immediately
+
+### Scripts
+- `npm run dev` — start dev server
+- `npm run build` — build to `dist/`
+- `npm run preview` — preview production build
+
+
+================================================================================
+END OF FILE: README.md
+================================================================================
+
+
+================================================================================
+FILE: ROADMAP.md
+================================================================================
+
+## Roadmap (Prioritized)
+
+### P0 — Content & polish
+- [x] Populate all `CaseStudy` props in `index.astro` (Situation, Intervention, Playbook, Key Results)
+- [x] Refactor `CaseStudy` to bifurcated layout (Results + Playbook visible; narrative behind toggle)
+- [x] Establish global rhythm/utilities: `section-y` and `measure` (~72ch)
+- [x] Apply rhythm to `Hero`, `OperatingSystem`, and `#proof` sections (Hero/OS may be one step denser)
+- [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
+- [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
+- [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
+- [x] Reorder sections to Hero (Thesis) → Proof (Business Case Studies) → Operating System (Unfair Advantage) → Deep Dive (Technical Architecture)
+- [x] Add snapshot in Hero with links to case studies
+- [x] Add Deep Dive section for technical system architecture showcase
+- [x] Resolve "Playbook" terminology ambiguity by renaming technical section
+- [x] Update technical case study content with personal narrative approach
+- [x] Position YesAnd Music as proof point for operating system methodology
+- [x] Update Hero CTA to "Explore the Proof" reflecting new narrative flow
+- [x] Enhance section descriptions to better connect the narrative flow
+- [x] Evolve CaseStudy component to "Interactive Proof" with quantifiedOutcome prop
+- [x] Restructure collapsed view to show Title + Quantified Outcome + Playbook
+- [x] Restructure expanded view to show Situation + Intervention + Key Results
+- [x] Update case study content with new narrative structure
+- [x] Reposition Operating System section to focus on AI-native development methodology
+- [x] Reposition Deep Dive section to frame YesAnd Music as proof of the OS
+
+### P1 — SEO & metadata
+- [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)
+- [ ] Add canonical URL and `theme-color`
+- [ ] Consider structured data for Person/Organization (optional)
+
+### P2 — Deployment & analytics
+- [ ] Choose host (Vercel/Netlify/Cloudflare). Add project and connect repo
+- [ ] Add preview deploys on PRs
+- [ ] Optional: lightweight analytics (Plausible/Umami)
+
+### P3 — Content evolution
+- [ ] Replace placeholders with final copy
+- [ ] Consider Astro Content Collections for case studies if they grow
+- [ ] Add footer section (simple, low-chrome). If 3 columns:
+  - Wrapper: `grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8`
+
+### Style changes implemented
+- Operating System section: added `scroll-mt-24`; increased vertical padding
+- Proof section heading: `text-3xl md:text-4xl font-semibold leading-tight`
+- CaseStudy card: `shadow-sm`; lists `leading-relaxed` with consistent spacing; explicit disclosure labels; Playbook emphasized; optional badges
+- Alignment normalized: left-aligned body across sections; OS heading centered only on small screens; headings and body left-aligned from `md+`.
+- CaseStudy "Interactive Proof": Quantified Outcome displayed prominently in collapsed view; Key Results moved to expanded view; enhanced visual hierarchy for better user flow.
+
+
+
+
+================================================================================
+END OF FILE: ROADMAP.md
+================================================================================
+

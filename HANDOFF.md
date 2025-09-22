@@ -8,7 +8,7 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - Global CSS: `src/styles/global.css`
 - Layout shell: `src/layouts/Layout.astro` (imports Inter font, base meta)
 - Page: `src/pages/index.astro`
-- Components: `Hero.astro`, `CaseStudy.astro`, `PlaybooksSection.astro`
+- Components: `Hero.astro`, `BaseCaseStudy.astro`, `CaseStudy.astro`, `PlaybooksSection.astro`
 
 ### Current state
 - Section order is Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS).
@@ -18,8 +18,9 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - `Proof` section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities.
 - `Operating System` section showcases AI-native development methodology with three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine.
 - `Deep Dive` section demonstrates the methodology in action through YesAnd Music as proof of the OS.
-- `CaseStudy` is a bifurcated card: always-visible Title, Quantified Outcome, and Playbook, with the detailed narrative (Situation + Intervention + Key Results) behind a native `<details>/<summary>` (no JS). Disclosure copy is explicit ("Read full story/Hide full story"). Optional metadata badges render if provided.
-- `PlaybooksSection` is a specialized component for technical case studies with GitHub integration, featuring the same bifurcated layout as CaseStudy but with additional technical implementation details.
+- `BaseCaseStudy` is a shared base component containing common structure (header, playbook section, collapsible details) and GitHub link functionality.
+- `CaseStudy` extends BaseCaseStudy for business case studies: always-visible Title, Quantified Outcome, and Playbook, with Key Results in the collapsible section. Supports optional GitHub links.
+- `PlaybooksSection` extends BaseCaseStudy for technical case studies: always-visible Title, One-liner, Key Results, and Playbook, with Situation + Intervention in the collapsible section. Supports optional GitHub links.
 
 ### Recent decisions
 - **Re-architected information hierarchy** to follow thesis-driven narrative flow: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS).
@@ -31,6 +32,7 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - Visible copy avoids em/en dashes and heavy punctuation. Prefer short sentences and simple phrasing. The meta description also avoids em dashes.
 - Resolved "Playbook" terminology ambiguity by renaming technical section to "Deep Dive: Technical Architecture" to distinguish from business case study playbooks.
 - **Evolved CaseStudy component to "Interactive Proof"**: Replaced `oneLiner` with `quantifiedOutcome` prop for immediate impact. Collapsed view now shows Title + Quantified Outcome + Playbook. Expanded view contains Situation + Intervention + Key Results for complete narrative proof.
+- **Implemented shared base component architecture**: Created `BaseCaseStudy.astro` to eliminate code duplication while preserving intentional design differences between business and technical case studies. Both `CaseStudy.astro` and `PlaybooksSection.astro` now support optional GitHub links with consistent styling.
 
 ### What’s left (high-signal)
 1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
@@ -50,8 +52,17 @@ Open the printed local URL.
 - Section components: `src/components/*.astro`
 - Design system utilities: `src/styles/global.css`
 
-### CaseStudy data shape (for quick reference)
-- Props: `title: string`, `quantifiedOutcome: string`, `keyResults: string[]`, `situation: string`, `intervention: string[]`, `playbook: string[]`
+### Component data shapes (for quick reference)
+
+**BaseCaseStudy props:**
+- `title: string`, `situation: string`, `intervention: string[]`, `playbook: string[]`
+- `role?: string`, `timeframe?: string`, `domain?: string`, `githubUrl?: string`
+
+**CaseStudy props (extends BaseCaseStudy):**
+- `quantifiedOutcome: string`, `keyResults: string[]` (Key Results in collapsible section)
+
+**PlaybooksSection props (extends BaseCaseStudy):**
+- `oneLiner: string`, `keyResults: string[]` (Key Results in always-visible section)
 
 ### Known considerations
 - Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.

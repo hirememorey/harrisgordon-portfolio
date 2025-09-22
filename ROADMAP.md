@@ -22,6 +22,9 @@
 - [x] Update case study content with new narrative structure
 - [x] Reposition Operating System section to focus on AI-native development methodology
 - [x] Reposition Deep Dive section to frame YesAnd Music as proof of the OS
+- [x] Implement shared base component architecture with BaseCaseStudy.astro
+- [x] Add GitHub link functionality to both CaseStudy and PlaybooksSection components
+- [x] Eliminate code duplication while preserving intentional design differences
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)
@@ -45,5 +48,6 @@
 - CaseStudy card: `shadow-sm`; lists `leading-relaxed` with consistent spacing; explicit disclosure labels; Playbook emphasized; optional badges
 - Alignment normalized: left-aligned body across sections; OS heading centered only on small screens; headings and body left-aligned from `md+`.
 - CaseStudy "Interactive Proof": Quantified Outcome displayed prominently in collapsed view; Key Results moved to expanded view; enhanced visual hierarchy for better user flow.
+- GitHub links: Consistent styling with external link icon, hover states, and proper accessibility attributes across both component types.
 
 
