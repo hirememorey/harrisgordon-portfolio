@@ -6,7 +6,7 @@ This document is kept as a reference for the data shape only. Make content edits
 
 ### Data shape
 - `title: string`
-- `oneLiner: string`
+- `quantifiedOutcome: string`
 - `keyResults: string[]`
 - `situation: string`
 - `intervention: string[]` (ordered steps)
@@ -19,8 +19,8 @@ This document is kept as a reference for the data shape only. Make content edits
 ### Example usage (in `index.astro`)
 ```astro
 <CaseStudy
-  title="The Crisis Manager"
-  oneLiner="Retaining a $900k enterprise account by transforming a P0 crisis into a new company protocol."
+  title="Turnaround Operator"
+  quantifiedOutcome="Saved $900k in at-risk ARR & Unlocked a $2.2M Enterprise Pipeline"
   keyResults={["Result A", "Result B"]}
   situation="One concise paragraph here."
   intervention={["Step 1", "Step 2", "Step 3"]}

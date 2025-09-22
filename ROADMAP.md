@@ -8,11 +8,20 @@
 - [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
 - [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
 - [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
-- [x] Reorder sections to Hero → Operating System → Proof → Deep Dive (System Architecture)
+- [x] Reorder sections to Hero (Thesis) → Proof (Business Case Studies) → Operating System (Unfair Advantage) → Deep Dive (Technical Architecture)
 - [x] Add snapshot in Hero with links to case studies
 - [x] Add Deep Dive section for technical system architecture showcase
 - [x] Resolve "Playbook" terminology ambiguity by renaming technical section
 - [x] Update technical case study content with personal narrative approach
+- [x] Position YesAnd Music as proof point for operating system methodology
+- [x] Update Hero CTA to "Explore the Proof" reflecting new narrative flow
+- [x] Enhance section descriptions to better connect the narrative flow
+- [x] Evolve CaseStudy component to "Interactive Proof" with quantifiedOutcome prop
+- [x] Restructure collapsed view to show Title + Quantified Outcome + Playbook
+- [x] Restructure expanded view to show Situation + Intervention + Key Results
+- [x] Update case study content with new narrative structure
+- [x] Reposition Operating System section to focus on AI-native development methodology
+- [x] Reposition Deep Dive section to frame YesAnd Music as proof of the OS
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)
@@ -35,5 +44,6 @@
 - Proof section heading: `text-3xl md:text-4xl font-semibold leading-tight`
 - CaseStudy card: `shadow-sm`; lists `leading-relaxed` with consistent spacing; explicit disclosure labels; Playbook emphasized; optional badges
 - Alignment normalized: left-aligned body across sections; OS heading centered only on small screens; headings and body left-aligned from `md+`.
+- CaseStudy "Interactive Proof": Quantified Outcome displayed prominently in collapsed view; Key Results moved to expanded view; enhanced visual hierarchy for better user flow.
 
 

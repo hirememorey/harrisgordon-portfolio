@@ -18,16 +18,16 @@ Local dev runs at `http://localhost:4321`.
 - `src/components/CaseStudy.astro` — bifurcated case study card: Key Results + Playbook always visible; narrative via native `<details>/<summary>` (no JS); explicit disclosure labels; optional metadata badges
 - `src/components/PlaybooksSection.astro` — technical case study component with GitHub integration for system architecture projects
 
-### What’s implemented
-- Section order: Hero → Operating System → Proof (Case Studies) → Deep Dive (System Architecture)
+### What's implemented
+- Section order: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology) → Deep Dive (Proof of the OS)
 - Hero includes a one‑sentence results snapshot with links to each case study. The snapshot is prefixed inline with `Case studies:`
-- Primary CTA “View My Playbooks” jumps to `#proof`; Email/LinkedIn shown inline
-- Operating System section appears fully in the first view (fold) on common laptop sizes
-- Three populated Case Studies
-- Deep Dive section showcasing technical system architecture with GitHub integration
+- Primary CTA "Explore the Proof" jumps to `#proof`; Email/LinkedIn shown inline
+- Proof section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities
+- Operating System section showcases AI-native development methodology with three core pillars
+- Deep Dive section demonstrates the methodology in action through YesAnd Music as proof of the OS
 - Global vertical rhythm (`section-y`) and reading measure applied to improve scan/read
 - CaseStudy lists normalized for scannability; explicit disclosure labels; optional Role/Timeframe/Domain badges
-- Native details/summary for the narrative; Results and Playbook are always visible (no client JS)
+- Native details/summary for the narrative; Title, Quantified Outcome, and Playbook are always visible (no client JS)
 - Single alignment axis: body copy left-aligned within the measure; hero headline may be centered; OS heading is centered only on small screens and left-aligned from `md` up.
 
 ### Next steps
@@ -37,8 +37,9 @@ Local dev runs at `http://localhost:4321`.
 
 ### First‑view (fold) acceptance criteria
 - Viewport targets: 1280×800 and 1440×900
-- Without scrolling you should see: name, thesis, CTA + Email/LinkedIn, the one‑sentence snapshot, and the full Operating System block
+- Without scrolling you should see: name, thesis, CTA + Email/LinkedIn, and the one‑sentence results snapshot
 - Snapshot clauses link to specific case studies (`#cs-crisis`, `#cs-turnaround`, `#cs-venture`)
+- Proof section should be visible to demonstrate business results immediately
 
 ### Scripts
 - `npm run dev` — start dev server

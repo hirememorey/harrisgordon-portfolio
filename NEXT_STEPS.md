@@ -1,50 +1,30 @@
-### Next Steps: Implement the Page Sections
+### Next Steps: Information Hierarchy Complete
 
-All work happens in `src/pages/index.astro`. Keep sections semantic and minimal.
+**STATUS: COMPLETED** - The page sections have been re-architected to follow a thesis-driven narrative flow.
 
-#### 1) Hero
-- Purpose: Name, thesis, call-to-action.
-- Structure:
-  - `section#hero`
-  - Heading with name and brief thesis line
-  - One primary CTA (e.g., "Read the Playbooks")
-- Suggested Tailwind:
-  - Wrapper: `w-full py-16 md:py-20 lg:py-24`
-  - Heading: `text-4xl md:text-5xl font-semibold tracking-tight`
-  - Sub: `mt-4 text-xl md:text-2xl text-neutral-700`
-  - CTA: `mt-8 inline-flex items-center rounded-md border border-neutral-300 px-4 py-2 hover:bg-neutral-50`
+### Phase 4: AI-Native Development Methodology Repositioning
 
-#### 2) Operating System
-- Purpose: Work philosophy explained concisely.
-- Structure:
-  - `section#operating-system`
-  - Short intro + bullets or numbered list
-- Suggested Tailwind:
-  - Title: `text-2xl md:text-3xl font-semibold`
-  - Content: `mt-4 space-y-3 text-neutral-800`
+**STATUS: COMPLETED** - The Operating System and Deep Dive sections have been repositioned to showcase AI-native development methodology.
 
-#### 3) Proof (Case Studies)
-- Purpose: Three case studies where Key Results and the Repeatable Playbook are always visible; the narrative (Situation + Intervention) is opt-in via native `<details>/<summary>`.
-- Structure:
-  - `section#proof`
-  - For each case: a `<details>` wrapper with a styled `<summary>` acting as the toggle label
-  - Panel contains Situation, Intervention (ordered), Playbook (ordered)
-- Suggested Tailwind:
-  - Card: `rounded-lg border border-neutral-200 bg-white/80 shadow-sm`
-  - Key Results list: `leading-relaxed`
-  - Playbook list: `leading-relaxed rounded-md border border-neutral-200 bg-neutral-50 p-3 md:p-4`
-  - Summary (toggle): `w-full inline-flex items-center rounded-md border border-neutral-300 px-3 py-1.5 md:text-base hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300`; Use `group`/`group-open` to swap label text
-  - Panel: `mt-6 space-y-6 text-neutral-800`
+#### Current Section Order (IMPLEMENTED)
+1. **Hero (The Thesis)** - Name, thesis, call-to-action
+2. **Proof (Business Case Studies)** - Three case studies demonstrating Turnaround Operator & Venture Builder capabilities
+3. **Operating System (AI-Native Development Methodology)** - Three core pillars: The External Brain, The Red Team Pre-Mortem, and The Post-Mortem Time Machine
+4. **Deep Dive (Proof of the OS)** - YesAnd Music as tangible demonstration of the AI-native methodology in action
 
-#### 4) Core Competencies & Footer
-- Purpose: Enumerate strengths; close with contact.
-- Structure:
-  - `section#competencies`
-  - Simple list of competencies in 2 columns on md+ screens
-  - Footer with email and minimal links
-- Suggested Tailwind:
-  - Grid: `mt-6 grid grid-cols-1 md:grid-cols-2 gap-4`
-  - Footer: `mt-16 border-t border-neutral-200 pt-6 text-sm text-neutral-700`
+#### Section Purposes (IMPLEMENTED)
+- **Hero**: Establishes the thesis and value proposition with results snapshot
+- **Proof**: Leads with quantified business results to demonstrate capabilities
+- **Operating System**: Reveals the AI-native development methodology with three core pillars
+- **Deep Dive**: Demonstrates the methodology in action through YesAnd Music as proof of the OS
+
+#### Key Changes Made (IMPLEMENTED)
+- Reordered sections to follow thesis → proof → methodology → technical implementation flow
+- Updated Hero CTA from "View My Playbooks" to "Explore the Proof"
+- Repositioned Operating System section to focus on AI-native development methodology
+- Repositioned Deep Dive section to frame YesAnd Music as proof of the OS
+- Enhanced section descriptions to better connect the narrative
+- Removed separate OperatingSystem component (now integrated into main page structure)
 
 #### Content status
 - Case studies populated in `src/pages/index.astro` with full `oneLiner`, `keyResults`, `situation`, `intervention`, and `playbook` content.
@@ -120,9 +100,10 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 ```
 
-#### Fold validation checklist
+#### Fold validation checklist (UPDATED)
 - Viewports: 1280×800 and 1440×900
-- Above the fold: name, thesis, primary CTA + Email/LinkedIn, one‑sentence results snapshot, and full Operating System block
+- Above the fold: name, thesis, primary CTA + Email/LinkedIn, and one‑sentence results snapshot
+- Proof section should be visible to demonstrate business results immediately
 - Snapshot clauses link to `#cs-crisis`, `#cs-turnaround`, `#cs-venture` and jump with headings visible (`scroll-mt-24`)
 
 #### Review checklist
