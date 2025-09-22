@@ -10,135 +10,132 @@ import CaseStudy from '../components/CaseStudy.astro';
 
 	<!-- Proof: The Business Case Studies (Turnaround Operator & Venture Builder) -->
 	<section id="proof" class="w-full pt-4 md:pt-6 lg:pt-8 pb-10 md:pb-12 lg:pb-16 scroll-mt-24">
-		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">The Proof: Business Case Studies</h2>
+		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">The Proof: Case Studies</h2>
 		<p class="mt-3 text-base md:text-lg leading-relaxed text-neutral-800">
-			Turnaround Operator & Venture Builder. Three case studies demonstrating how I transform high-stakes chaos into scalable growth through data-driven systems and repeatable playbooks.
+			Three playbooks for turning chaos into growth.
 		</p>
 		<div class="mt-6 space-y-6">
 			<div id="cs-crisis" class="scroll-mt-24">
 			<CaseStudy
 				title="The Crisis Manager"
-				oneLiner="Retaining a $900k enterprise account by transforming a P0 crisis into a new company protocol."
-				keyResults={[
-					'Retained a $900k ARR strategic account that was on the brink of churning.',
-					'Created the V1 of a new Enterprise Release Protocol, a playbook now used to de-risk other high-stakes accounts.',
-					'Transformed the account from a churn risk into our most important design partner for stability.'
-				]}
-				situation="Our largest account was about to churn. A clinical integrity crisis, where the AI generated false patient data, combined with a broken internal release process had completely destroyed their trust."
-				intervention={[
-					'Phase 1: Triage & Containment. My first step was to absorb the chaos. I took immediate ownership on customer calls, using radical candor to validate their frustration and de-escalate the situation from hostile to productive.',
-					"Phase 2: The 'Mirror of Reality'. I built the V1 MIDI Health Dashboard. This 'mirror' became the single source of truth, replacing emotional debates with data-driven conversations about the real-time impact of our platform's failures.",
-					"Phase 3: The 'New Treaty'. Armed with data, I led the negotiation to redesign our release process. We co-created a new protocol: a weekly release to a staging URL with a mandatory customer 'Go/No-Go' before production, giving them the control needed to regain trust."
-				]}
 				playbook={[
-					'Absorb Chaos with Candor: Own the failure to de-escalate.',
-					'Build a Data-Driven Mirror: Replace opinions with objective reality.',
-					'Co-design the System: Partner with the customer to create a durable fix.'
+					'Own the failure to de-escalate.',
+					'Build a data mirror to replace opinions with facts.',
+					'Partner with the customer to build the fix.'
+				]}
+				quantifiedOutcome="Saved a $900k ARR account from churning"
+				situation="Our largest account was about to churn. A clinical AI was generating false patient data, and our broken release process had destroyed all trust."
+				intervention={[
+					'Triage: I took immediate ownership on customer calls. I used radical candor to absorb the chaos and turn a hostile situation productive.',
+					'The Mirror: I built a V1 Health Dashboard that became the single source of truth. It forced data-driven conversations about the platform\'s real-time failures.',
+					'The New Treaty: Armed with data, I led the negotiation to redesign our release process. We co-created a new protocol with a mandatory customer "Go/No-Go" before every production release. This gave them the control they needed to trust us again.'
+				]}
+				keyResults={[
+					'Saved a $900k ARR account from churning.',
+					'Created a new Enterprise Release Protocol now used to de-risk all high-stakes accounts.',
+					'Turned a churn risk into our most important design partner for stability.'
 				]}
 			/>
 			</div>
 
 			<div id="cs-turnaround" class="scroll-mt-24">
 			<CaseStudy
-				title="Turnaround Operator"
-				quantifiedOutcome="Saved $900k in at-risk ARR & Unlocked a $2.2M Enterprise Pipeline"
-				keyResults={[
-					"Unlocked 20%+ of GTM & Success team capacity to focus on a $2.2M enterprise pipeline.",
-					"Cut reactive 'squeaky wheel' fire drills by over 50% in two weeks.",
-					"Shipped the V1 of a new company operating system for making data-driven strategic trade-offs."
-				]}
-				situation="A YC-backed, Series A health-tech client was in crisis. A chaotic 'move fast and break things' culture led to a breaking product, a burned-out team, and a P0 churn risk with their largest account."
-				intervention={[
-					"Diagnosis: The root cause was a systemic failure of leadership to connect a 'hype-driven' strategy with operational reality. There was no rational system for prioritization.",
-					"System Architecture: I architected and shipped a new GTM operating system from the bottom up. This included a data-driven 'Account Health' framework to replace the 'squeaky wheel' culture, a formal 'GTM Blocker Triage' ritual to align Sales and Engineering, and a 'P0 Incident Response' playbook to manage crises professionally."
-				]}
+				title="The Turnaround Operator"
 				playbook={[
-					"Diagnose the disconnect between strategy and reality.",
-					"Build a 'coalition of the sane' with operational leaders.",
-					"Architect the V1 systems that make chaos obsolete.",
-					"Use crises as catalysts to force systemic change."
+					'Diagnose the disconnect between strategy and reality.',
+					'Build a coalition of the sane with operational leaders.',
+					'Architect the V1 systems that make chaos obsolete.',
+					'Use a crisis as the catalyst for systemic change.'
+				]}
+				quantifiedOutcome="Unlocked 20%+ of GTM & Success team capacity to focus on a $2.2M enterprise pipeline"
+				situation="A YC-backed, Series A client was in crisis. A 'move fast and break things' culture created a breaking product, a burned-out team, and a P0 churn risk with their largest account."
+				intervention={[
+					'Diagnosis: The root cause was a leadership failure. The company had a "hype-driven" strategy with no rational system for prioritizing work.',
+					'System Architecture: I built a new GTM operating system from the bottom up. It included a data-driven "Account Health" framework, a "GTM Blocker Triage" ritual to align Sales and Engineering, and a "P0 Incident Response" playbook.'
+				]}
+				keyResults={[
+					'Unlocked 20%+ of GTM & Success team capacity to focus on a $2.2M enterprise pipeline.',
+					'Cut reactive "squeaky wheel" fire drills by over 50% in two weeks.',
+					'Shipped the V1 of a new company operating system for making data-driven strategic trade-offs.'
 				]}
 			/>
 			</div>
 
 			<div id="cs-venture" class="scroll-mt-24">
 			<CaseStudy
-				title="Venture Builder"
-				quantifiedOutcome="Architected and Secured a Pilot for a 0-to-1 Venture in 11 Weeks"
-				keyResults={[
-					"Diagnosed the true 'hair-on-fire' problem for daycare directors in 25+ interviews.",
-					"Architected a fully compliant 'On-Demand Floater' operational model in a complex regulatory maze.",
-					"Secured a formal pilot agreement with a major multi-site operator (Little Scholars)."
-				]}
-				situation="A YC-backed, Series C client launched a 'Work Trial' program with a broad mandate: 'build a new labor marketplace.' The initial concept was unvetted and the target market was undefined."
-				intervention={[
-					"Diagnosis: Through 25+ customer interviews, I invalidated the initial thesis and diagnosed the true 'hair-on-fire' problem for daycare directors: a crippling 'staffing crisis' driven by regulatory friction and high turnover.",
-					"System Architecture: I designed a new, compliant 'On-Demand Floater' model from first principles. I built the end-to-end operational infrastructure as the solo DRI, establishing the legal entity, securing insurance, and architecting the V1 of all GTM and onboarding playbooks."
-				]}
+				title="The Venture Builder"
 				playbook={[
-					"Invalidate the initial thesis fast with real customers.",
-					"Diagnose the true 'hair-on-fire' problem.",
-					"Architect a compliant, first-principles solution.",
-					"Build the full-stack operational MVP to prove viability."
+					'Invalidate the thesis fast with real customers.',
+					'Diagnose the true "hair-on-fire" problem.',
+					'Architect a compliant, first-principles solution.',
+					'Build the full-stack MVP to prove viability.'
+				]}
+				quantifiedOutcome="Secured a formal pilot agreement with a major multi-site operator in 11 weeks"
+				situation="A YC-backed, Series C client started a 'Work Trial' to build a new labor marketplace. The initial concept was unvetted and the target market was undefined."
+				intervention={[
+					'Diagnosis: I conducted 25+ customer interviews that invalidated the initial idea. I found the real "hair-on-fire" problem for daycare directors: a crippling staffing crisis caused by regulatory friction and high turnover.',
+					'System Architecture: I designed a new, compliant "On-Demand Floater" model from scratch. I acted as the solo DRI to build the entire operational infrastructure: legal entity, insurance, and all V1 GTM and onboarding playbooks.'
+				]}
+				keyResults={[
+					'Diagnosed the true "hair-on-fire" problem in 25+ interviews.',
+					'Architected a fully compliant operational model in a complex regulatory maze.',
+					'Secured a formal pilot agreement with a major multi-site operator in 11 weeks.'
 				]}
 			/>
 			</div>
 		</div>
 	</section>
 
-	<!-- Operating System: AI-Native Development Methodology & Proof -->
+	<!-- My AI-Native Operating System -->
 	<section id="operating-system" class="w-full pt-4 md:pt-6 lg:pt-8 pb-10 md:pb-12 lg:pb-16 scroll-mt-24">
-		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">My Operating System: An AI-Native Workflow for Building</h2>
+		<h2 class="text-3xl md:text-4xl font-semibold leading-tight">My AI-Native Operating System</h2>
 		<p class="mt-3 text-base md:text-lg leading-relaxed text-neutral-800">
-			To build high-quality systems under pressure, I've engineered a repeatable, AI-assisted operating system. It's designed to de-risk development, solve for context-drift, and turn a stateless LLM into a true strategic partner. Below, I demonstrate this methodology in action through the development of YesAnd Music.
+			I developed a repeatable system for building with AI to deliver high-quality work under pressure. It de-risks development and turns a stateless LLM into a strategic partner. My work on the YesAnd Music project is the proof.
 		</p>
 		<div class="mt-6 space-y-6">
 			<div id="os-methodology" class="scroll-mt-24">
 			<CaseStudy
 				title="The Core Pillars of My AI-Native Development System"
-				quantifiedOutcome="A systematic approach to building complex systems by leveraging AI as a strategic partner, not just a coding assistant. This methodology ensures consistent quality, reduces context drift, and transforms every project into a learning opportunity."
-				keyResults={[
-					'De-risked development by forcing AI to anticipate failure before implementation.',
-					'Solved context-drift by maintaining persistent, version-controlled documentation.',
-					'Transformed stateless LLMs into strategic partners through systematic post-mortem analysis.'
-				]}
-				situation="Building high-quality systems under pressure requires more than just technical skill—it requires a systematic approach that can scale with complexity. Traditional development workflows break down when faced with novel problems, tight deadlines, and the need for consistent quality across diverse projects."
-				intervention={[
-					'The External Brain: Using version-controlled documentation as a persistent context store that maintains project knowledge across sessions and team members.',
-					'The Red Team Pre-Mortem: Forcing the AI to argue against its own plans to anticipate failure modes and edge cases before implementation begins.',
-					'The Post-Mortem Time Machine: Extracting latent wisdom from failed attempts to inject into clean slate projects, turning every failure into future success.'
-				]}
 				playbook={[
-					'Establish persistent context through version-controlled documentation.',
-					'Force adversarial thinking by having AI argue against its own solutions.',
-					'Extract learnings from failures and inject them into new projects.',
-					'Maintain systematic approach across all development phases.'
+					'Establish a persistent context with version-controlled docs.',
+					'Force adversarial thinking by making the AI argue against its own plans.',
+					'Extract learning from failure and inject it into the next attempt.'
+				]}
+				quantifiedOutcome="De-risked development by forcing the AI to anticipate failure"
+				situation="Building complex systems requires more than just technical skill. Traditional workflows break under pressure."
+				intervention={[
+					'The External Brain: I use version-controlled docs as a persistent brain for the AI. This kills context drift and keeps the AI aligned with the project\'s ground truth.',
+					'The Red Team Pre-Mortem: I force the AI to argue why its own plans will fail. This surfaces hidden risks and edge cases before implementation begins.',
+					'The Post-Mortem Time Machine: When the AI fails, I make it extract the key insight it wishes it had at the start. I then inject this wisdom into a clean slate, turning every failure into a lesson.'
+				]}
+				keyResults={[
+					'De-risked development by forcing the AI to anticipate failure.',
+					'Solved context-drift with persistent, version-controlled documentation.',
+					'Turned a stateless LLM into a strategic partner through systematic analysis.'
 				]}
 			/>
 			</div>
 
-			<div id="tech-architecture" class="scroll-mt-24">
+			<div id="yesand-music" class="scroll-mt-24">
 			<CaseStudy
-				title="YesAnd Music: A Complete AI-Native Development Case Study"
-				quantifiedOutcome="This project demonstrates my AI-native operating system in action. I wanted to get musical ideas out of my head and into my computer faster, but found no existing solution. So I built it myself using my systematic approach—turning a personal workflow problem into a sophisticated technical platform through AI-assisted development."
-				keyResults={[
-					'Architected a complete, hybrid Python-to-C++ system with real-time, thread-safe communication.',
-					'Built a professional-grade C++ audio engine that intelligently translates musical concepts into MIDI transformations.',
-					'Delivered a robust natural language command interface, turning a personal workflow into a scalable tool.',
-					'Co-architected with AI partner using version-controlled documentation and systematic post-mortem analysis.'
-				]}
-				situation="I wanted to get musical ideas out of my head and into my computer faster. I looked for a tool that let me use simple commands to control my music but found nothing that met my requirements. The existing solutions were either too complex, too limited, or didn't integrate with professional audio workflows. This was the perfect test case for my AI-native development system."
-				intervention={[
-					'Applied The External Brain: Used version-controlled documentation to maintain context across development sessions, ensuring my AI partner understood the full scope and constraints of the project.',
-					'Implemented The Red Team Pre-Mortem: Forced the AI to argue against the Python-C++ hybrid architecture, identifying potential failure modes in real-time communication and MIDI processing before implementation.',
-					'Leveraged The Post-Mortem Time Machine: Extracted learnings from previous music technology projects and injected them into this clean slate, avoiding known pitfalls and accelerating development.'
-				]}
+				title="YesAnd Music: A Case Study in AI-Native Development"
 				playbook={[
 					'Define technical requirements when no existing solution meets your needs.',
 					'Apply systematic AI-assisted development using the three-pillar methodology.',
 					'Build with documentation and modularity from day one.',
-					'Create interfaces that others can understand and extend.',
-					'Use every project as a learning opportunity for future development.'
+					'Create interfaces that others can understand and extend.'
+				]}
+				quantifiedOutcome="Architected a complete, hybrid Python-to-C++ system with real-time, thread-safe communication"
+				situation="I wanted a tool to get musical ideas out of my head and into my computer faster. Nothing existed. So I built it myself using my AI-native system."
+				intervention={[
+					'The External Brain: I used version-controlled documentation to ensure my AI partner understood the full scope of a hybrid Python-C++ audio project.',
+					'The Red Team Pre-Mortem: I forced the AI to argue against the proposed architecture, which identified critical failure modes in the real-time communication bridge before we wrote any code.',
+					'The Post-Mortem Time Machine: I injected learnings from my past music tech projects into this clean slate, allowing the AI to avoid known pitfalls from day one.'
+				]}
+				keyResults={[
+					'Architected a complete, hybrid Python-to-C++ system with real-time, thread-safe communication.',
+					'Built a professional-grade C++ audio engine for intelligent MIDI transformations.',
+					'Delivered a robust natural language command interface, turning a personal workflow into a scalable tool.'
 				]}
 				githubUrl="https://github.com/hirememorey/yesand-music"
 			/>

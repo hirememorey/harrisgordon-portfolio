@@ -28,10 +28,9 @@ const {
 
 <article class="rounded-lg border border-neutral-200 bg-white/80 shadow-sm">
 	<div class="px-4 py-4 md:px-6 md:py-6">
-		<!-- ALWAYS VISIBLE: Title, Quantified Outcome, Playbook -->
+		<!-- ALWAYS VISIBLE: Title, Playbook, Quantified Outcome -->
 		<header class="space-y-3">
 			<h3 class="text-lg md:text-xl font-semibold tracking-tight">{title}</h3>
-			<p class="text-lg md:text-xl font-medium text-neutral-900">{quantifiedOutcome}</p>
 			{(role || timeframe || domain) && (
 				<div class="mt-2 flex flex-wrap gap-2 text-sm text-neutral-700">
 					{role && (<span class="inline-flex items-center rounded-md border border-neutral-200 bg-neutral-50 px-2 py-0.5">{role}</span>)}
@@ -43,10 +42,17 @@ const {
 
 		{playbook?.length > 0 && (
 			<section class="mt-6">
-				<h4 class="text-base md:text-lg font-semibold">My Repeatable Playbook</h4>
+				<h4 class="text-base md:text-lg font-semibold">My Playbook</h4>
 				<ol class="mt-2 list-decimal pl-5 space-y-2 text-neutral-900 leading-relaxed rounded-md border border-neutral-200 bg-neutral-50 p-3 md:p-4">
 					{playbook.map((step) => <li>{step}</li>)}
 				</ol>
+			</section>
+		)}
+
+		{quantifiedOutcome && (
+			<section class="mt-6">
+				<h4 class="text-base md:text-lg font-semibold">The Result</h4>
+				<p class="text-lg md:text-xl font-medium text-neutral-900">{quantifiedOutcome}</p>
 			</section>
 		)}
 
@@ -68,18 +74,20 @@ const {
 			</summary>
 
 			<div class="mt-6 space-y-6 text-neutral-800">
-				<div>
-					<h4 class="text-base md:text-lg font-medium">The Situation</h4>
-					<p class="mt-2">{situation}</p>
-				</div>
-				<div>
-					<h4 class="text-base md:text-lg font-medium">My Intervention</h4>
-					{intervention?.length > 0 && (
+				{situation && (
+					<div>
+						<h4 class="text-base md:text-lg font-medium">The Situation</h4>
+						<p class="mt-2">{situation}</p>
+					</div>
+				)}
+				{intervention?.length > 0 && (
+					<div>
+						<h4 class="text-base md:text-lg font-medium">My Intervention</h4>
 						<ol class="mt-2 list-decimal pl-5 space-y-2 leading-relaxed">
 							{intervention.map((step) => <li>{step}</li>)}
 						</ol>
-					)}
-				</div>
+					</div>
+				)}
 				{keyResults?.length > 0 && (
 					<div>
 						<h4 class="text-base md:text-lg font-medium">Key Results</h4>

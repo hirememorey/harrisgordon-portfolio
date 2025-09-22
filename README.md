@@ -15,18 +15,18 @@ Local dev runs at `http://localhost:4321`.
 - `src/layouts/Layout.astro` — layout shell, meta, Inter font, applies reading measure
 - `src/styles/global.css` — Tailwind v4 entry and small utilities (`section-y` rhythm, `measure` ~72ch)
 - `src/pages/index.astro` — single-page composition
-- `src/components/CaseStudy.astro` — bifurcated case study card: Key Results + Playbook always visible; narrative via native `<details>/<summary>` (no JS); explicit disclosure labels; optional metadata badges
+- `src/components/CaseStudy.astro` — enhanced Interactive Proof case study card: Playbook + Quantified Outcome always visible; narrative via native `<details>/<summary>` (no JS); explicit disclosure labels; optional metadata badges
 - `src/components/BaseCaseStudy.astro` — shared base component with common structure and GitHub link functionality
 
 ### What's implemented
-- Section order: Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology & Proof)
-- Hero includes a one‑sentence results snapshot with links to each case study. The snapshot is prefixed inline with `Case studies:`
+- Section order: Hero (Thesis) → Proof (Case Studies) → Operating System (AI-Native Development Methodology & Proof)
+- Hero includes updated positioning and track record with links to each case study
 - Primary CTA "Explore the Proof" jumps to `#proof`; Email/LinkedIn shown inline
-- Proof section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities
-- Operating System section showcases AI-native development methodology with three core pillars AND demonstrates it in action through YesAnd Music as unified proof
+- Proof section leads with three case studies: The Crisis Manager, The Turnaround Operator, and The Venture Builder
+- Operating System section showcases AI-native development methodology with core pillars AND demonstrates it through YesAnd Music as proof
 - Global vertical rhythm (`section-y`) and reading measure applied to improve scan/read
-- CaseStudy lists normalized for scannability; explicit disclosure labels; optional Role/Timeframe/Domain badges
-- Native details/summary for the narrative; Title, Quantified Outcome, and Playbook are always visible (no client JS)
+- Enhanced Interactive Proof model: Title, Playbook, and Quantified Outcome always visible; Situation, Intervention, and Key Results collapsible
+- Native details/summary for the narrative; explicit disclosure labels; optional Role/Timeframe/Domain badges
 - Single alignment axis: body copy left-aligned within the measure; hero headline may be centered; OS heading is centered only on small screens and left-aligned from `md` up.
 
 ### Next steps

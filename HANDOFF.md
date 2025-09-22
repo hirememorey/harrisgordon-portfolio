@@ -11,24 +11,24 @@ This doc brings you up to speed fast and tells you exactly what to do next.
 - Components: `Hero.astro`, `BaseCaseStudy.astro`, `CaseStudy.astro`
 
 ### Current state
-- Section order is Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology & Proof).
+- Section order is Hero (Thesis) → Proof (Case Studies) → Operating System (AI-Native Development Methodology & Proof).
 - Layout updated with title, meta description, viewport, Inter font, and base body classes.
 - Reading measure applied to main container; global vertical rhythm utility (`section-y`) and base prose leading in place.
-- `Hero` includes a one‑sentence results snapshot with links to each case study; CTA "Explore the Proof" jumps to `#proof`.
-- `Proof` section leads with three business case studies demonstrating Turnaround Operator & Venture Builder capabilities.
-- `Operating System` section showcases AI-native development methodology with three core pillars AND demonstrates it in action through YesAnd Music as unified proof.
-- `BaseCaseStudy` is a shared base component containing common structure (header, playbook section, collapsible details) and GitHub link functionality.
-- `CaseStudy` extends BaseCaseStudy for all case studies: always-visible Title, Quantified Outcome, and Playbook, with Key Results in the collapsible section. Supports optional GitHub links.
-- **UNIFIED COMPONENT ARCHITECTURE**: All case studies now use the single `CaseStudy` component for consistency and maintainability.
+- `Hero` includes updated copy with new positioning and track record with links to each case study; CTA "Explore the Proof" jumps to `#proof`.
+- `Proof` section leads with three case studies: The Crisis Manager, The Turnaround Operator, and The Venture Builder.
+- `Operating System` section showcases AI-native development methodology with core pillars AND demonstrates it through YesAnd Music as proof.
+- `CaseStudy` component uses enhanced Interactive Proof model: always-visible Title, Playbook, and Quantified Outcome; collapsible Situation, Intervention, and Key Results.
+- **ENHANCED CONTENT HIERARCHY**: Playbook is now first (always visible), followed by Quantified Outcome, maintaining scannable-first user experience.
+- **UNIFIED COMPONENT ARCHITECTURE**: All case studies use the single `CaseStudy` component for consistency and maintainability.
 
 ### Recent decisions
-- **Unified section architecture**: Merged Operating System and Deep Dive sections into a single, cohesive section that presents methodology and immediately proves it with YesAnd Music.
-- **Simplified component architecture**: Eliminated `PlaybooksSection.astro` component and unified all case studies under the single `CaseStudy.astro` component for consistency and maintainability.
-- The hero snapshot sentence begins with a small inline label: `Case studies:`. It remains in the same paragraph as the three links to preserve the fold.
-- **Updated Hero CTA** from "View My Playbooks" to "Explore the Proof" to better reflect the new narrative flow.
-- **Enhanced narrative flow**: Operating System section now seamlessly flows from methodology explanation to concrete proof through YesAnd Music, creating a unified user experience.
-- **Evolved CaseStudy component to "Interactive Proof"**: Replaced `oneLiner` with `quantifiedOutcome` prop for immediate impact. Collapsed view now shows Title + Quantified Outcome + Playbook. Expanded view contains Situation + Intervention + Key Results for complete narrative proof.
-- **Implemented shared base component architecture**: Created `BaseCaseStudy.astro` to eliminate code duplication. All case studies now use the unified `CaseStudy.astro` component with optional GitHub links and consistent styling.
+- **Content Strategy Update**: Implemented new copy with enhanced positioning while preserving the Interactive Proof model for optimal user experience.
+- **Enhanced Content Hierarchy**: Restructured CaseStudy component to show Playbook first, then Quantified Outcome, maintaining scannable-first approach.
+- **Updated Hero Positioning**: New headline emphasizes "founder-level operator" with clear value proposition and updated track record.
+- **Case Study Restructuring**: All three case studies updated with new content structure: The Crisis Manager, The Turnaround Operator, and The Venture Builder.
+- **Operating System Split**: Separated methodology explanation from YesAnd Music proof point for clearer narrative flow.
+- **Preserved Interactive Proof Model**: Maintained the sophisticated "scannable first, details on demand" user experience that makes the site effective for busy executives.
+- **Content Compression Strategy**: Extracted key phrases for always-visible sections while preserving full detail in collapsible sections.
 
 ### What’s left (high-signal)
 1) SEO/OG/Twitter meta and canonical URL in `Layout.astro`; consider `theme-color`.
@@ -50,13 +50,19 @@ Open the printed local URL.
 
 ### Component data shapes (for quick reference)
 
-**BaseCaseStudy props:**
-- `title: string`, `situation: string`, `intervention: string[]`, `playbook: string[]`
-- `role?: string`, `timeframe?: string`, `domain?: string`, `githubUrl?: string`
+**CaseStudy props:**
+- `title: string` - Case study title
+- `playbook: string[]` - Always visible, first section (repeatable methodology)
+- `quantifiedOutcome: string` - Always visible, second section (measurable result)
+- `situation: string` - Collapsible (context and challenge)
+- `intervention: string[]` - Collapsible (detailed steps taken)
+- `keyResults: string[]` - Collapsible (specific outcomes achieved)
+- `role?: string`, `timeframe?: string`, `domain?: string` - Optional metadata badges
+- `githubUrl?: string` - Optional GitHub link
 
-**CaseStudy props (extends BaseCaseStudy):**
-- `quantifiedOutcome: string`, `keyResults: string[]` (Key Results in collapsible section)
-- All case studies now use the unified `CaseStudy` component
+**Content Hierarchy:**
+- Always Visible: Title → Playbook → Quantified Outcome
+- Collapsible: Situation → Intervention → Key Results
 
 ### Known considerations
 - Keep JS minimal. `CaseStudy` uses native details/summary and no client JS.

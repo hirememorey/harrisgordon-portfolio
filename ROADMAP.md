@@ -6,9 +6,9 @@
 - [x] Establish global rhythm/utilities: `section-y` and `measure` (~72ch)
 - [x] Apply rhythm to `Hero`, `OperatingSystem`, and `#proof` sections (Hero/OS may be one step denser)
 - [x] Normalize CaseStudy lists: `space-y-2` + `leading-relaxed`
-- [x] Make disclosure labels explicit/stateful (“Read full story”/“Hide full story”)
+- [x] Make disclosure labels explicit/stateful ("Read full story"/"Hide full story")
 - [x] Optional metadata badges (Role/Timeframe/Domain) rendered only if provided
-- [x] Reorder sections to Hero (Thesis) → Proof (Business Case Studies) → Operating System (AI-Native Development Methodology & Proof)
+- [x] Reorder sections to Hero (Thesis) → Proof (Case Studies) → Operating System (AI-Native Development Methodology & Proof)
 - [x] Add snapshot in Hero with links to case studies
 - [x] Merge Operating System and Deep Dive sections into unified narrative flow
 - [x] Eliminate PlaybooksSection component and unify all case studies under CaseStudy component
@@ -17,13 +17,18 @@
 - [x] Update Hero CTA to "Explore the Proof" reflecting new narrative flow
 - [x] Enhance section descriptions to better connect the narrative flow
 - [x] Evolve CaseStudy component to "Interactive Proof" with quantifiedOutcome prop
-- [x] Restructure collapsed view to show Title + Quantified Outcome + Playbook
+- [x] Restructure collapsed view to show Title + Playbook + Quantified Outcome
 - [x] Restructure expanded view to show Situation + Intervention + Key Results
 - [x] Update case study content with new narrative structure
 - [x] Reposition Operating System section to focus on AI-native development methodology
 - [x] Implement shared base component architecture with BaseCaseStudy.astro
 - [x] Add GitHub link functionality to CaseStudy component
 - [x] Eliminate code duplication with unified component architecture
+- [x] **NEW**: Update Hero copy with new positioning and track record
+- [x] **NEW**: Restructure CaseStudy component to show Playbook first, then Quantified Outcome
+- [x] **NEW**: Update all three case studies with new content structure
+- [x] **NEW**: Split Operating System into methodology and YesAnd Music proof sections
+- [x] **NEW**: Implement content compression strategy for enhanced scannability
 
 ### P1 — SEO & metadata
 - [ ] Add Open Graph/Twitter meta in `Layout.astro` (title, description, type, image)
